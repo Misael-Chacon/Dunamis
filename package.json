@@ -1,0 +1,14 @@
+{
+  "name": "proyectodunamis",
+  "version": "1.0.0",
+  "description": "Proyecto de desarrollo Web",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Leo Chacon",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
