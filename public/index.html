@@ -2,15 +2,71 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Dunamis</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <script src="main.js"></script>
+    <link rel="shortcut icon" href="img/LogoDunamis.png">
+    <title>Dunamis</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" type="text/css" media="all" href="css/estilos.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+   
 </head>
-<body>
+
+<body style= "background-color: rgb(50,50,50)">
+   
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+    <a class="navbar-brand" href="#"><img src="img/DigitalesDunamis.png" class="logo-dunamis"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+      <form id="formulario-login" class="form-inline my-2 my-lg-0 ml-auto">
+           <button type="button" id = "boton" class="btn btn-outline-warning">Plumas</button> 
+           <button type="button" id = "boton" class="btn btn-outline-light">Proyectos</button> 
+           <button type="button" id = "boton" class="btn btn-outline-warning">Mensajes</button> 
+           <button type="button" id = "boton"  class="btn btn-outline-light" >Colecciones</button> 
+      
+           <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Crear
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">Nueva Pluma</a>
+                <a class="dropdown-item" href="#">Nuevo Proyecto</a>
+                <a class="dropdown-item" href="#">Nuevo Mensaje</a>
+                <a class="dropdown-item" href="#">Nueva Colección</a>
+              </div>
+            </div>
+
+        <input class="form-control mr-sm-2" type="text" placeholder="Correo ó Teléfono" aria-label="Email or Phone">
+        <input class="form-control mr-sm-2" type="password" placeholder="Contraseña" aria-label="Password">
+        <button class="btn btn-primary my-2 my-sm-0" type="submit">Iniciar Sesion</button>
+        <button class="btn btn-primary my-2 my-sm-0" type="submit">Registrar</button>
+      </form>
+    </div>
+  </nav>
+
+  <div id="cuerpo">
+    
+       <div id="derecha">
+       </div>
+       
+       <div id="izquierda">
+      </div>
+
+      <div id="abajo">
+      </div>
+
+  </div>
+ 
+  
+ 
 
     <H1>ESTE ES MI PROYECTO</H1>
 
+    <script src="main.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
 </body>
+
 </html>>
