@@ -2,11 +2,22 @@
 /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
+*{
+  margin:0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .logo-dunamis{
       width: 150px;
       height: 60px;
       right: 20px;
   }
+  .captura{
+    width: 800px;
+    height: 500px;
+    right: 20px;
+}
   
     .container {
         min-width: 992px !important;
@@ -70,6 +81,19 @@
   .btn-outline-warning{
     margin-left:8px;
 }
+
+.btn-info{
+  margin-top:25px;
+  background-color: #84f041;
+  border: 0px;
+  font-size: 0.8em;
+  font-weight: bold;
+}
+.btn-dark{
+  margin-top:25px;
+  margin-left: 25px;
+}
+
 .btn-secondary{
   margin-left:58px;
   margin-right: 8px;
@@ -112,32 +136,119 @@
       text-align: center;
   }
    
-
 .boton{
 margin-left: 10px;
 margin-right: 10px;
 }
 
+hr{
+font-size: 20px;
+}
+
 div#cuerpo{
   margin: auto;
-  margin-top: 70 px; 
-  width: 960px;
+  width: 1350px;
   height: 1800px;
-  background-color: red;
+  background-color:no;
 }
 div#derecha{
   float: right;
-  width: 480px;
-  height: 800px;
-  background-color: blue;
+  width: 675px;
+  height: 500px;
+  background-color:no;
 }
 div#izquierda{
-  width: 480px;
-  height: 800px;
-  background-color: green;
+  width: 675px;
+  height: 500px;
+  background-color: no;
 }
-div#abajo{
-  width: 960px;
+div#abajo1{
+  width: 1350px;
   height: 1000px;
-  background-color: rgb(128, 117, 0);
+  padding: 3rem 3rem 3rem 3rem;
+  margin: auto;
 }
+div#abajo2{
+  width: 1350px;
+  height: 1000px;
+  padding: 3rem 3rem 3rem 3rem;
+  margin: auto;
+}
+div#abajo3{
+  width: 1350px;
+  height: 1000px;
+  padding: 3rem 3rem 3rem 3rem;
+  margin: auto;
+}
+
+div#abajo4{
+  width: 1350px;
+  height: 1000px;
+  padding: 3rem 3rem 3rem 3rem;
+  margin: auto;
+}
+div#plumaunica{
+  width: 369.142px;
+  height: 312.382px;
+  float:left;
+  background-color: rgb(26, 3, 10);
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.28) 2px 2px 3px 0px;
+  box-sizing: border-box;
+  color: white;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 10PX;
+  margin-bottom: 10PX;
+}
+
+div#verplumas{
+  width: 250px;
+  height: 40px;
+  float: right;
+  background-color: no;
+  box-sizing: border-box;
+  color: white;
+  margin-left: 10px;
+  margin-right: 100px;
+  margin-top: 30PX;
+  margin-bottom: 10PX;
+}
+
+.promo-headline{
+  margin: auto; 
+  margin-top: 125px;
+  color: rgb(255, 255, 255);
+  width: auto;
+}
+.promo-tagline{
+  margin: auto; 
+  margin-top: 20px;
+  color: rgb(255, 255, 255);
+  width: auto;
+  font-size: 26px;
+}
+.project{
+  margin: auto; 
+  margin-top: 0px;
+  margin-left: 60px; 
+  color: rgb(255, 255, 255);
+  width: auto;
+  font-size: 18px;
+}
+.plumasescogidas{
+  margin: auto; 
+  margin-top: 20px;
+  color: rgb(255, 255, 255);
+  width: auto;
+  font-size: 50px;
+  font-weight: bold;
+}
+button#anterior{
+  margin-left: 500px;
+  margin-right: 0px;
+}
+
