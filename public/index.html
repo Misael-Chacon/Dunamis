@@ -13,15 +13,15 @@
 </head>
 
 <body style= "background-color: rgb(0,50,50)">
+  
   <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-    <a class="navbar-brand" href="#"><img src="img/DigitalesDunamis.png" class="logo-dunamis"></a>
+    <a class="navbar-brand" href="index.html"><img src="img/DigitalesDunamis.png" class="logo-dunamis"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
       <div class="collapse navbar-collapse" id="navbarsExampleDefault">
       <form id="formulario-login" class="form-inline my-2 my-lg-0 ml-auto">
-           <button type="button" id = "boton" class="btn btn-outline-warning">Plumas</button> 
            <button type="button" id = "boton" class="btn btn-outline-light">Proyectos</button> 
            <button type="button" id = "boton" class="btn btn-outline-warning">Mensajes</button> 
            <button type="button" id = "boton"  class="btn btn-outline-light" >Colecciones</button> 
@@ -31,79 +31,37 @@
                 Crear
               </button>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="#">Nueva Pluma</a>
                 <a class="dropdown-item" href="#">Nuevo Proyecto</a>
                 <a class="dropdown-item" href="#">Nuevo Mensaje</a>
                 <a class="dropdown-item" href="#">Nueva Colección</a>
               </div>
             </div>
 
-        <input class="form-control mr-sm-2" type="text" placeholder="Correo ó Teléfono" aria-label="Email or Phone">
-        <input class="form-control mr-sm-2" type="password" placeholder="Contraseña" aria-label="Password">
-        <button class="btn btn-primary my-2 my-sm-0" type="submit">Iniciar Sesion</button>
-        <button class="btn btn-primary my-2 my-sm-0" type="submit">Registrarse</button>
+            <div>
+            </div>
+
+       <a href="login.html" class="btn btn-primary my-2 my-sm-0" type="submit">Iniciar Sesion</a>
+       <a href="registrogratis.html" class="btn btn-primary my-2 my-sm-0" type="submit">Registrarse</a>
       </form>
     </div>
   </nav>
 
   <div id="cuerpo">
        <div id="derecha">
-          <p class="project">¡Esto es <a href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">DUNAMIS</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> !</font></font>
+          <p class="project">¡Esto es <a href="#">DUNAMIS</a>!
           </p>
           <img class="captura" src="img/Captura.JPG" alt="Captura de pantalla de Proyectos">
         </div>
        
        <div id="izquierda">
-          <h1 class="promo-headline"><font style="vertical-align: inherit;">
-          <font style="vertical-align: inherit;">DUNAMIS es un </font></font><strong>
-          <font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
-          entorno de desarrollo social</font></font></strong><font style="vertical-align: inherit;">
-          <font style="vertical-align: inherit;"> para diseñadores y desarrolladores front-end. 
-          </font><font style="vertical-align: inherit;">👋</font></font></h1>
+          <h1 class="promo-headline">DUNAMIS es un <strong>
+          entorno de desarrollo social</strong> para diseñadores y desarrolladores front-end. 
+          👋</h1>
 
-          <p class="promo-tagline"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Es el mejor lugar para crear e implementar un sitio web, mostrar su trabajo, crear casos de prueba y encontrar inspiración. </font></font>
+          <p class="promo-tagline">Es el mejor lugar para crear e implementar un sitio web, mostrar su trabajo, crear casos de prueba y encontrar inspiración.
           </p>
-          <button type="button" class="btn btn-info">Registrate</button>
+          <a class="navbar-brand" href="registrogratis.html"><button type="button" class="btn btn-info">Registrate Gratis</button></a>
           <button type="button" class="btn btn-dark">Aprende mas</button>
-      </div>
-
-      <div id="abajo1">
-          <div >
-              <h1 class="plumasescogidas">Plumas Escogidas
-             <div id="verplumas"> <a href="#"><h5>Ver mas Plumas-></h5></a>
-             </div> 
-             </h1>
-             
-              <hr>
-              <div id="plumaunica">
-
-              </div>
-
-              <div id="plumaunica">
-
-              </div>
-
-              <div id="plumaunica">
-
-              </div>
-
-              <div id="plumaunica">
-
-              </div>
-
-              <div id="plumaunica">
-
-              </div>
-
-              <div id="plumaunica">
-
-              </div>
-
-            </div>
-
-            
-       <button id="anterior" type="button" class="btn btn-dark">Anterior</button>
-       <button id="siguiente" type="button" class="btn btn-dark">Siguiente</button>
       </div>
 
       <div id="abajo2">
@@ -244,7 +202,9 @@
             <div class="footer-copy-redes">
               <div class="main-copy-redes">
                 <div class="footer-copy">
-                  &copy; 2018, Todos los derechos reservados - !Dunamis Digitales!.
+                    <p class="footer-text">									
+                        Copyright &copy;<script>document.write(new Date().getFullYear());</script> Todos los derechos reservados | Dunamis Digitales</a>
+                      </p>
                 </div>
                 <div class="footer-redes">
                   <a href="#" img src="img/logoFacebook.png" alt="Facebook" class="fa fa-facebook"></a>

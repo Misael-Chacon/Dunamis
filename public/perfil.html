@@ -1,12 +1,149 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE <!DOCTYPE html>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="img/LogoDunamis.png">
+    <title>Dunamis</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" type="text/css" media="all" href="css/estilos.css" />
+    <link rel="stylesheet" type="text/css" media="all" href="css/perfil.css" />
+    <link rel="stylesheet" type="text/css" media="all" href="css/footer.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+   
 </head>
-<body>
-    
+
+<body style= "background-color: rgb(0,50,50)">
+  
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+    <a class="navbar-brand" href="index.html"><img src="img/DigitalesDunamis.png" class="logo-dunamis"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+      <form id="formulario-login" class="form-inline my-2 my-lg-0 ml-auto">
+           <button type="button" id = "boton" class="btn btn-outline-light">Proyectos</button> 
+           <button type="button" id = "boton" class="btn btn-outline-warning">Mensajes</button> 
+           <button type="button" id = "boton"  class="btn btn-outline-light" >Colecciones</button> 
+      
+           <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Crear
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">Nuevo Proyecto</a>
+                <a class="dropdown-item" href="#">Nuevo Mensaje</a>
+                <a class="dropdown-item" href="#">Nueva Colección</a>
+              </div>
+            </div>
+
+            <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+                <button type="button" class="btn btn-secondary">1</button>
+                <button type="button" class="btn btn-secondary">2</button>
+                <div class="btn-group" role="group">
+                  <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                   Usuario
+                  </button>
+                  <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                    <a  href="perfil.html" class="dropdown-item" href="#">Perfil</a>
+                    <a class="dropdown-item" href="#">Apoyo</a>
+                    <a class="dropdown-item" href="#">Ajustes</a>
+                    <a  href="index.html" class="dropdown-item" href="#">Cerrar Sesion</a>
+                  </div>
+                </div>
+              </div>
+
+      </form>
+    </div>
+  </nav>
+
+  <div id="cuerpo">
+      
+      <div id="abajo2">
+          <div >
+              <h1 class="plumasescogidas">Perfil
+             <div id="verplumas"> <a href="#"><h5>Guardar Cambios</h5></a>
+             </div> 
+             </h1>
+             
+              <hr>
+              <div id="plumaunica">
+
+              </div>
+
+              <div id="plumaunica">
+
+              </div>
+
+              <div id="plumaunica">
+
+              </div>
+
+              <div id="plumaunica">
+
+              </div>
+
+              <div id="plumaunica">
+
+              </div>
+
+              <div id="plumaunica">
+
+              </div>
+      
+       <button id="anterior" type="button" class="btn btn-dark">Anterior</button>
+       <button id="siguiente" type="button" class="btn btn-dark">Siguiente</button>
+      </div>
+
+      </div>
+
+     
+      <div>
+          <footer>
+            <div class="footer-container">
+              <div class="footer-main">
+                   <div class="footer-columna">
+                     <h3>Registrate</h3>
+                     <input type="email" placeholder="Escriba su Correo o Teléfono">
+                     <input type="submit" value="Suscribirse">
+                   </div>
+                   <div class="footer-columna">
+                     <h3>Dirección</h3>
+                     <span class="fa fa-map-marker"><p>Colonia Villanueva Sector 7A Tegucigalpa Honduras</p></span>
+                     <span class="fa fa-phone"><p>(+504 9906-2425)</p></span>
+                     <span class="fa fa-envelope"><p>misaelchacon17@yahoo.es</p></span>
+                   </div>
+                   <div class="footer-columna">
+                     <h3>Sobre Nosotros</h3>
+                     <p>Somos una empresa para desarrolladores totalmente diferente, facil de usar y de rapido acceso</p>
+                   </div>
+              </div>
+            </div>
+            <div class="footer-copy-redes">
+              <div class="main-copy-redes">
+                <div class="footer-copy">
+                    <p class="footer-text">									
+                        Copyright &copy;<script>document.write(new Date().getFullYear());</script> Todos los derechos reservados | Dunamis Digitales</a>
+                      </p>
+                </div>
+                <div class="footer-redes">
+                  <a href="#" img src="img/logoFacebook.png" alt="Facebook" class="fa fa-facebook"></a>
+                  <a href="#" img src="img/logoTwiter.png" alt="Twiter" class="fa fa-twitter"></a>
+                  <a href="#" img src="img/logogithub.png" alt="Github" class="fa fa-github"></a>
+                </div>
+              </div>
+            </div>
+          </footer>
+         </div>
+        
+
+  </div>
+
+ 
+    <script src="main.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
 </body>
-</html>
+
+</html>>

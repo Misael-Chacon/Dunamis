@@ -1,0 +1,198 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+            <meta charset="utf-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link rel="shortcut icon" href="img/LogoDunamis.png">
+            <title>Dunamis Registro Super</title>
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <link rel="stylesheet" type="text/css" media="all" href="css/estilos.css" />
+            <link rel="stylesheet" type="text/css" media="all" href="css/footer.css" />
+            <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+            <link rel="stylesheet" href="css/registro.css">
+</head>
+
+ <body style= "background-color: rgb(0,50,50)">
+                  <div>  
+                  <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+                          <a class="navbar-brand" href="index.html"><img src="img/DigitalesDunamis.png" class="logo-dunamis"></a>
+                          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                          </button>
+                      
+                            <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+                            <form id="formulario-login" class="form-inline my-2 my-lg-0 ml-auto">
+                                 <button type="button" id = "boton" class="btn btn-outline-light">Proyectos</button> 
+                                 <button type="button" id = "boton" class="btn btn-outline-warning">Mensajes</button> 
+                                 <button type="button" id = "boton"  class="btn btn-outline-light" >Colecciones</button> 
+                            
+                                 <div class="dropdown">
+                                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                      Crear
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                      <a class="dropdown-item" href="#">Nuevo Proyecto</a>
+                                      <a class="dropdown-item" href="#">Nuevo Mensaje</a>
+                                      <a class="dropdown-item" href="#">Nueva Colección</a>
+                                    </div>
+                                  </div>
+                      
+                       
+                                  <a href="login.html" class="btn btn-primary my-2 my-sm-0" type="submit">Iniciar Sesion</a>
+                              <a href="planes.html" class="btn btn-primary my-2 my-sm-0" type="submit">Ir a Planes</a>
+                            </form>
+                          </div>
+                        </nav>
+                  </div> 
+      <br>
+
+ <header id= "super" class="signup-header">
+       <h1>Súper</h1>
+       <p id="p1"> El Plan Super es superpoderoso. Buena Elección
+       </p>
+ </header>
+
+<div class="container-fluid" class= ".d-none .d-sm-block">
+     <div class="row">
+        <div class="registro" class= ".d-none .d-sm-block">
+            <h2>Registro de usuarios</h2>
+            <form class="formulario">
+            <h6>Tu nombre completo:</h6> 
+            <input class="form-control" type="text" id="" name="" placeholder="Ejem. Juan Orlando Hernandez">
+            <br/>
+            <h6> Elige un nombre de usuario para Dunamis: </h6>
+            <input class="form-control" type="text" id="" name="" placeholder="Ejem. JuanFogon">
+            <br/>
+            <h6>  Correo: </h6>
+            <input class="form-control" type="email" id="" name="" placeholder="Ejem. juanhernandez@gmail.com">
+            <br/>
+            <h6> Contraseña: </h6>
+            <input class="form-control" type="password" id="" name="" placeholder="minimo 8 caracteres">
+            <br/>
+            <h6>  Fecha de nacimiento:</h6> 
+            <input class="form-control" type="date" id="" name="">
+            <br/>
+            <h6>  Genero:</h6>
+            <h6><label>Femenino<input type="radio" name="rbt-genero"></label>
+            <label>Masculino<input type="radio" name="rbt-genero"></label><br></h6>
+             <h6>  Pais:</h6>
+                    
+                    <select class="form-control">
+                        <option value="-">Seleccione su país de origen</option>
+                        <?php
+                        require_once 'DB/dunamis.php';
+                        $query="SELECT * from tbl_paices;
+                        $resultado=$link->query($query);
+                        while($row=$resultado->fetch_assoc()){?>
+                            <?php echo $row['codigo_usuario'];?>
+                                <option id="codigo_usuario" value=" <?php echo $row['codigo_usuario']; ?>"><?php echo $row['nombre_pais'];?></option>
+                            <?php
+                        }
+                        $resultado->close(); 
+                        ?>
+                    </select> <br>
+
+                    <a href="Formpagosuper.html" id="next" class="btn btn-primary"type="submit" value="Siguiente"></a>
+                 <br> 
+               <h6>Al registrarse usted acepta los terminos de servicio, el codigo de conducta y la politica de privacidad de Dunamis. </h6>
+          </form> 
+         </div>
+    
+            <div class="plan" class= ".d-none .d-sm-block">
+                <h4>Plan Súper</h4>
+                <br>
+                <div>
+                        <h3>Proyectos</h3>
+                        <hr>
+                         <table>
+                                  <tr> 
+                                        <td>Proyecto cuenta</td>
+                                        <td class="filaderecha">50</td>
+                                  </tr>
+                                  <tr>
+                                        <td>Archivos por Proyecto</td>
+                                        <td class="filaderecha">300</td>
+                                  </tr>
+                                  </tr>
+                                        <td>Despliega</td>
+                                        <td class="filaderecha">20</td>
+                                  </tr>
+                                </tr>
+                                        <td>Dominios personalizados</td>
+                                        <td class="filaderecha">20</td>
+                                </tr>
+                         </table>
+                              
+                                <h3>Vistas del proyecto</h3>
+                                <hr>
+                                <table>
+                                        <tr> 
+                                              <td>Vista del editor</td>
+                                              <td class="filaderecha">✅</td>
+                                        </tr>
+                                        <tr>
+                                              <td>Vista completa</td>
+                                              <td class="filaderecha">✅</td>
+                                        </tr>
+                                        </tr>
+                                              <td>Vista de detalles</td>
+                                              <td class="filaderecha">✅</td>
+                                        </tr>
+                                      </tr>
+                                              <td>Vista de depuración compartible</td>
+                                              <td class="filaderecha">✅</td>
+                                      </tr>
+                               </table>
+                                
+                               <h3>Alojamiento de Activos</h3>
+                               <hr>
+                               <table>
+                                    <tr> 
+                                          <td>GB Total</td>
+                                          <td class="filaderecha">10 GB</td>
+                                    </tr>
+                                    <tr> 
+                                                <td>Tamaño máximo de Archivo</td>
+                                                <td class="filaderecha">2 MB</td>
+                                          </tr>
+                                   
+                           </table>
+                           <br>   
+                </div>
+            </div>
+    </div>
+</div>
+<br>
+
+
+<footer class="footer-area" id="footerSection">
+            <div class="col-lg-12 col-md-12 col-sm-12 social-widget ">
+                  <div class="single-footer-widget footer-redes siguenos">
+                        <h4 style="color: white;">Siguenos</h4>
+                                 <div id="redsocial">
+                                  <a href="https://www.facebook.com" target="_blank" ><i class="fa fa-facebook"></i><img src="img/Facebook.png" alt="Facebook" class="Facebook"></a>
+                                  <a href="https://www.twitter.com" target="_blank"><i class="fa fa-twitter"></i><img src="img/Twitter.png" alt="Facebook" class="twitter"></a>
+                                  </div>
+                                  <br>  
+                                  <br>
+                  </div>
+            </div>		
+            <div class="col-lg-12 col-md-6 col-sm-6">
+                  <div  id="copyrith" class="single-footer-widget"></div>
+                        <p id="copyrith" class="footer-text" style="color:white;" style="text-align:center">									
+                              Copyright &copy;<script>document.write(new Date().getFullYear());</script>Todos los derechos reservados | Dunamis Digitales</a>
+                        </p>								
+                  </div>
+                  <br>
+                  <br>
+            </div>												
+</footer>
+
+
+
+<script src="main.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+</body>
+</html>
