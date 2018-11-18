@@ -51,38 +51,67 @@
        </p>
  </header>
 
-<div class="container-fluid" class= ".d-none .d-sm-block">
+<div class="container-fluid" class= ".d-none .d-sm-block" class="col-md-8 order-md-1">
      <div class="row">
-        <div class="registro" class= ".d-none .d-sm-block">
+        <div class="registro" class= ".d-none .d-sm-block" >
             <h2>Registro de usuarios</h2>
-            <form class="formulario">
-            <h6>Tu nombre completo:</h6> 
-            <input class="form-control" type="text" id="" name="" placeholder="Ejem. Juan Orlando Hernandez">
-            <br/>
-            <h6> Elige un nombre de usuario para Dunamis: </h6>
-            <input class="form-control" type="text" id="" name="" placeholder="Ejem. JuanFogon">
-            <br/>
-            <h6>  Correo: </h6>
-            <input class="form-control" type="email" id="" name="" placeholder="Ejem. juanhernandez@gmail.com">
-            <br/>
-            <h6> Contraseña: </h6>
-            <input class="form-control" type="password" id="" name="" placeholder="minimo 8 caracteres">
-            <br/>
-            <h6>  Fecha de nacimiento:</h6> 
-            <input class="form-control" type="date" id="" name="">
-            <br/>
-            <h6>  Genero:</h6>
-            <h6><label>Femenino<input type="radio" name="rbt-genero"></label>
-            <label>Masculino<input type="radio" name="rbt-genero"></label><br></h6>
-             <h6>  Pais:</h6>
-                    <select class="form-control">
-                        <option value="0">Honduras</option>
-                        <option value="1">Nicaragua</option>
-                    </select> <br>
-             <input class="btn btn-primary"type="submit" value="Registrarse">
-                 <br> 
-               <h6>Al registrarse usted acepta los terminos de servicio, el codigo de conducta y la politica de privacidad de Dunamis. </h6>
-          </form> 
+            <form class="formulario" class="needs-validation" novalidate>               
+                  
+                  <div class="col-md-12 mb-12">
+                        <h6>Tu nombre completo:</h6> 
+                        <input class="form-control" type="text" id="cc-name" name="" placeholder="Ejem. Juan Orlando Hernandez" required>
+                        <div class="invalid-feedback">
+                              Nombre Completo requerido
+                        </div>
+                  </div>
+                  <br/>
+
+                  <div class="col-md-12 mb-12">
+                        <h6> Elige un nombre de usuario para Dunamis: </h6>
+                        <input class="form-control" type="text" id="cc-name" name="" placeholder="Ejem. JuanFogon" required>
+                        <div class="invalid-feedback">
+                              Nombre de usuario requerido
+                        </div>
+                  </div>      
+                  <br/>      
+                     
+                  <div class="col-md-12 mb-12">
+                        <h6>  Correo: </h6>
+                        <input class="form-control" type="email" id="cc-email" name="" placeholder="Ejem. juanhernandez@gmail.com" required>
+                        <div class="invalid-feedback">
+                              correo electronico requerido
+                        </div>
+                  </div>      
+                  <br/>      
+                 
+                  <div class="col-md-12 mb-12">
+                        <h6>  Contraseña: </h6>
+                        <input class="form-control" type="password" id="cc-password" name="" placeholder="minimo 8 caracteres" required>
+                        <div class="invalid-feedback">
+                              Contraseña requerida
+                        </div>
+                  </div>      
+                  <br/> 
+                    
+                  <div class="col-md-12 mb-12">
+                        <h6>  Genero:</h6>
+                        <h6><label>Femenino<input type="radio" name="rbt-genero"></label>
+                        <label>Masculino<input type="radio" name="rbt-genero"></label><br></h6>
+                  </div>
+
+                  <div class="col-md-12 mb-12">
+                        <h6>  Pais:</h6>
+                              <select class="form-control">
+                                    <option value="0">Honduras</option>
+                                    <option value="1">Nicaragua</option>
+                              </select>
+                  </div> 
+                  <br>
+                  <hr class="mb-4">
+                  <button class="btn btn-primary btn-lg btn-block" type="submit">Registrarse</button>
+                        <br> 
+                        <h6>Al registrarse usted acepta los terminos de servicio, el codigo de conducta y la politica de privacidad de Dunamis. </h6>
+             </form> 
          </div>
     
             <div class="plan" class= ".d-none .d-sm-block">
