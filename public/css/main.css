@@ -3,7 +3,20 @@
     height: 60px;
     right: 20px;
 }
+#fotousuario{
+    width: 50px;
+    height: 50px;
+}
 
+#nombreusuario{
+    width: 100px;
+    height: 50px;
+    text-align: center;
+    display:flex; 
+    justify-content: center; 
+    align-items: center;
+    color: rgb(255, 255, 255);
+}
 .captura{
     text-align: center;
     display:flex; 
@@ -28,7 +41,7 @@
          }
     }
 @media (max-width: 720px) {
-    #derecha{
+    #derecha {
        display:none;
         }
     }

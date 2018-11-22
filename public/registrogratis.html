@@ -22,9 +22,9 @@
                       
                             <div class="collapse navbar-collapse" id="navbarsExampleDefault">
                             <form id="formulario-login" class="form-inline my-2 my-lg-0 ml-auto">
-                                 <button type="button" id = "boton" class="btn btn-outline-light">Proyectos</button> 
-                                 <button type="button" id = "boton" class="btn btn-outline-warning">Mensajes</button> 
-                                 <button type="button" id = "boton"  class="btn btn-outline-light" >Colecciones</button> 
+                                 <button type="button" id = "proyectos" class="btn btn-outline-light">Proyectos</button> 
+                                 <button type="button" id = "mensajes" class="btn btn-outline-warning">Mensajes</button> 
+                                 <button type="button" id = "colecciones"  class="btn btn-outline-light" >Colecciones</button> 
                             
                                  <div class="dropdown">
                                     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -55,63 +55,59 @@
      <div class="row">
         <div class="registro" class= ".d-none .d-sm-block" >
             <h2>Registro de usuarios</h2>
-            <form class="formulario" class="needs-validation" novalidate>               
-                  
+            
+            <form class="formulario" id= "guardo" action="/guardar" method="" class="needs-validation" novalidate>               
                   <div class="col-md-12 mb-12">
                         <h6>Tu nombre completo:</h6> 
-                        <input class="form-control" type="text" id="cc-name" name="" placeholder="Ejem. Juan Orlando Hernandez" required>
+                        <input class="form-control" type="text" id="nombrecompleto" name="" placeholder="Ejem. Juan Orlando Hernandez" required>
                         <div class="invalid-feedback">
                               Nombre Completo requerido
                         </div>
                   </div>
                   <br/>
-
                   <div class="col-md-12 mb-12">
                         <h6> Elige un nombre de usuario para Dunamis: </h6>
-                        <input class="form-control" type="text" id="cc-name" name="" placeholder="Ejem. JuanFogon" required>
+                        <input class="form-control" type="text" id="nombreusuario" name="" placeholder="Ejem. JuanFogon" required>
                         <div class="invalid-feedback">
                               Nombre de usuario requerido
                         </div>
                   </div>      
                   <br/>      
-                     
                   <div class="col-md-12 mb-12">
                         <h6>  Correo: </h6>
-                        <input class="form-control" type="email" id="cc-email" name="" placeholder="Ejem. juanhernandez@gmail.com" required>
+                        <input class="form-control" type="email" id="correo" name="" placeholder="Ejem. juanhernandez@gmail.com" required>
                         <div class="invalid-feedback">
                               correo electronico requerido
                         </div>
                   </div>      
                   <br/>      
-                 
                   <div class="col-md-12 mb-12">
                         <h6>  Contraseña: </h6>
-                        <input class="form-control" type="password" id="cc-password" name="" placeholder="minimo 8 caracteres" required>
+                        <input class="form-control" type="password" id="password" name="" placeholder="minimo 8 caracteres" required>
                         <div class="invalid-feedback">
                               Contraseña requerida
                         </div>
                   </div>      
                   <br/> 
-                    
-                  <div class="col-md-12 mb-12">
+                  <div id ="genro" class="col-md-12 mb-12">
                         <h6>  Genero:</h6>
-                        <h6><label>Femenino<input type="radio" name="rbt-genero"></label>
-                        <label>Masculino<input type="radio" name="rbt-genero"></label><br></h6>
+                        <h6><label>Femenino<input type="radio"  name="genero"></label>
+                        <label>Masculino<input type="radio"  name="genero"></label><br></h6>
                   </div>
-
                   <div class="col-md-12 mb-12">
-                        <h6>  Pais:</h6>
-                              <select class="form-control">
-                                    <option value="0">Honduras</option>
-                                    <option value="1">Nicaragua</option>
-                              </select>
+                        <h6>  Seleccione su nacionalidad o Pais:</h6>
+                        <select name="" id="pais" class="form-control">
+                              <option value="0" placeholder="Seleccione un pais"></option>
+                        </select>
+
                   </div> 
                   <br>
                   <hr class="mb-4">
-                  <button class="btn btn-primary btn-lg btn-block" type="submit">Registrarse</button>
+                  <button id="registrar" class="btn btn-primary btn-lg btn-block" type="button">Registrarse</button>
                         <br> 
                         <h6>Al registrarse usted acepta los terminos de servicio, el codigo de conducta y la politica de privacidad de Dunamis. </h6>
              </form> 
+
          </div>
     
             <div class="plan" class= ".d-none .d-sm-block">
@@ -204,10 +200,16 @@
             </div>												
 </footer>
 
+ <!-- New Message Sidebar End 
+-->
 
 
-<script src="main.js"></script>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/funcionalidad.js"></script>
+<script>  
+
+</script>
+
 </body>
 </html>
