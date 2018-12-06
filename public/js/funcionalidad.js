@@ -1,4 +1,4 @@
-//Se cargo todo SELECTOR DE PAICES
+//Se cargo todo SELECTOR DE PAICES en el index
 $(document).ready(function(){
     $.ajax({
         url: "/paices",
@@ -32,4 +32,25 @@ $("#registrar").click(function(){
 			console.error(error);
 		}
     }); 
+});
+
+//Para Iniciar Sesion de usuario
+$("#btn-login").click(function(){
+    console.log($("#formulario").serialize());
+    $.ajax({
+        url:"/login",
+        method:"POST",
+        data:$("#formulario").serialize(),
+        dataType:"json",
+        success:function(respuesta){
+            console.log(respuesta);
+            if (respuesta.length == 1)
+                window.location.href = "/home.html";
+            else 
+                alert("Credenciales invalidas");
+        },
+        error:function(error){
+            console.error(error);
+        }
+    });
 });
