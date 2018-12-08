@@ -12,11 +12,11 @@ var credenciales = {
     port: "3306"
 };
 //Exponer una carpeta como publica, unicamente para archivos estaticos: .html, imagenes, .css, .js
-app.use(express.static("public"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
     extended: true
 }));
+app.use(express.static("public"));
 app.use(session({
     secret: "ASDFE$%#%",
     resave: true,
@@ -24,20 +24,6 @@ app.use(session({
 }));
 var publicAdmin = express.static("public-admin");
 var publicUsuario = express.static("public-usuario");
-
-app.get("/paices", function (req, res) {
-    var conexion = mysql.createConnection(credenciales);
-    conexion.query("SELECT codigo_pais, nombre_pais FROM tbl_paises",
-        [],
-        function (error, data, fields) {
-            if (error)
-                res.send(error);
-            else
-                res.send(data);
-            res.end();
-        }
-    );
-});
 
 app.use(
     function (req, res, next) {
@@ -58,6 +44,21 @@ app.use(
     }
 );
 
+app.get("/paices", function (req, res) {
+    var conexion = mysql.createConnection(credenciales);
+    conexion.query("SELECT codigo_pais, nombre_pais FROM tbl_paises",
+        [],
+        function (error, data, fields) {
+            if (error)
+                res.send(error);
+            else
+                res.send(data);
+            res.end();
+        }
+    );
+});
+
+
 ///Para agregar seguridad a una ruta especifica:
 function verificarAutenticacion(req, res, next) {
     if (req.session.correoUsuario)
@@ -66,23 +67,54 @@ function verificarAutenticacion(req, res, next) {
         res.send("ERROR, ACCESO NO AUTORIZADO");
 }
 
-app.post("/login", function (req, res) {
+
+app.post("/login",function(req, res){
     var conexion = mysql.createConnection(credenciales);
     conexion.query(
         "SELECT codigo_usuario, correo, codigo_tipo_usuario FROM tbl_usuarios WHERE contrasenia = ? and correo=?",
         [req.body.contrasena, req.body.correo],
-        function (error, data, fields) {
-            if (error) {
+        function(error, data, fields){
+            if (error){
                 res.send(error);
                 res.end();
-            } else {
-                if (data.length == 1) {
+            }else{
+                if (data.length==1){
                     req.session.codigoUsuario = data[0].codigo_usuario;
                     req.session.correoUsuario = data[0].correo;
                     req.session.codigoTipoUsuario = data[0].codigo_tipo_usuario
                 }
                 res.send(data);
                 res.end();
+            }
+        }
+    )
+});
+
+app.post("/usuarios", function (req, res) {
+    var conexion = mysql.createConnection(credenciales);
+    conexion.query(
+        "SELECT codigo_usuario, nombre_completo, correo, username, genero, telefono, descripcion, direccion, fecha_nacimiento, codigo_tipo_usuario, codigo_plan, codigo_pais, foto FROM tbl_usuarios WHERE codigo_usuario = ?",
+        [req.session.codigoUsuario],
+        function (error, data, fields){
+            if (error){
+                res.send(error);
+                res.end();
+            } else {
+                if (data.length == 1) {
+                    req.session.nombre_completo = data[0].nombre_completo;
+                    req.session.username = data[0].username;
+                    req.session.genero = data[0].genero;
+                    req.session.telefono = data[0].telefono;
+                    req.session.descripcion = data[0].descripcion;
+                    req.session.direccion = data[0].direccion;
+                    req.session.fechaNacimiento = data[0].fecha_nacimiento;
+                    req.session.codigoPlan = data[0].codigo_plan;
+                    req.session.codigoPais = data[0].codigo_pais;
+                    req.session.foto = data[0].foto
+                }
+                res.send(data);
+                res.end();
+                conexion.end();
             }
         }
     )
