@@ -15,7 +15,7 @@ $(document).ready(function(){
         }
     });
 });
-
+//Para Registrar un nuevo Usuario
 $("#registrar").click(function(){
 	var parametros = `nombrecompleto=${$("#nombrecompleto").val()}&nombreusuario=${$("#nombreusuario").val()}&correo=${$("#correo").val()}&password=${$("#password").val()}&genro=${$("#genro").val()}&pais=${$("#pais").val()}`;
 	console.log(parametros);
@@ -34,23 +34,3 @@ $("#registrar").click(function(){
     }); 
 });
 
-//Para Iniciar Sesion de usuario
-$("#btn-login").click(function(){
-    console.log($("#formulario").serialize());
-    $.ajax({
-        url:"/login",
-        method:"POST",
-        data:$("#formulario").serialize(),
-        dataType:"json",
-        success:function(respuesta){
-            console.log(respuesta);
-            if (respuesta.length == 1)
-                window.location.href = "/home.html";
-            else 
-                alert("Credenciales invalidas");
-        },
-        error:function(error){
-            console.error(error);
-        }
-    });
-});

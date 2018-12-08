@@ -1,149 +1,260 @@
 <!DOCTYPE <!DOCTYPE html>
 <html>
+
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="img/LogoDunamis.png">
-    <title>Dunamis</title>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" type="text/css" media="all" href="css/estilos.css" />
-    <link rel="stylesheet" type="text/css" media="all" href="css/perfil.css" />
-    <link rel="stylesheet" type="text/css" media="all" href="css/footer.css" />
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-   
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="img/LogoDunamis.png">
+  <title>Dunamis</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="stylesheet" type="text/css" media="all" href="css/estilos.css" />
+  <link rel="stylesheet" type="text/css" media="all" href="css/perfil.css" />
+  <link rel="stylesheet" type="text/css" media="all" href="css/footer.css" />
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  
+
 </head>
 
-<body style= "background-color: rgb(0,50,50)">
-  
+<body>
+
   <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
     <a class="navbar-brand" href="index.html"><img src="img/DigitalesDunamis.png" class="logo-dunamis"></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+      aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
-      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
       <form id="formulario-login" class="form-inline my-2 my-lg-0 ml-auto">
-           <button type="button" id = "boton" class="btn btn-outline-light">Proyectos</button> 
-           <button type="button" id = "boton" class="btn btn-outline-warning">Mensajes</button> 
-           <button type="button" id = "boton"  class="btn btn-outline-light" >Colecciones</button> 
-      
-           <div class="dropdown">
-              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Crear
-              </button>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="#">Nuevo Proyecto</a>
-                <a class="dropdown-item" href="#">Nuevo Mensaje</a>
-                <a class="dropdown-item" href="#">Nueva Colección</a>
-              </div>
-            </div>
+        <button type="button" id="boton" class="btn btn-outline-light">Proyectos</button>
+        <button type="button" id="boton" class="btn btn-outline-warning">Mensajes</button>
+        <button type="button" id="boton" class="btn btn-outline-light">Colecciones</button>
 
-            <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
-                <button type="button" class="btn btn-secondary">1</button>
-                <button type="button" class="btn btn-secondary">2</button>
-                <div class="btn-group" role="group">
-                  <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                   Usuario
-                  </button>
-                  <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                    <a  href="perfil.html" class="dropdown-item" href="#">Perfil</a>
-                    <a class="dropdown-item" href="#">Apoyo</a>
-                    <a class="dropdown-item" href="#">Ajustes</a>
-                    <a  href="index.html" class="dropdown-item" href="#">Cerrar Sesion</a>
-                  </div>
-                </div>
-              </div>
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Crear
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="#">Nuevo Proyecto</a>
+            <a class="dropdown-item" href="#">Nuevo Mensaje</a>
+            <a class="dropdown-item" href="#">Nueva Colección</a>
+          </div>
+        </div>
+
+        <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+          <button type="button" class="btn btn-secondary">1</button>
+          <button type="button" class="btn btn-secondary">2</button>
+          <div class="btn-group" role="group">
+            <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              Usuario
+            </button>
+            <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+              <a href="perfil.html" class="dropdown-item" href="#">Perfil</a>
+              <a class="dropdown-item" href="#">Apoyo</a>
+              <a class="dropdown-item" href="#">Ajustes</a>
+              <a href="index.html" class="dropdown-item" href="#">Cerrar Sesion</a>
+            </div>
+          </div>
+        </div>
 
       </form>
     </div>
   </nav>
 
-  <div id="cuerpo">
-      
-      <div id="abajo2">
-          <div >
-              <h1 class="plumasescogidas">Perfil
-             <div id="verplumas"> <a href="#"><h5>Guardar Cambios</h5></a>
-             </div> 
-             </h1>
-             
-              <hr>
-              <div id="plumaunica">
-
-              </div>
-
-              <div id="plumaunica">
-
-              </div>
-
-              <div id="plumaunica">
-
-              </div>
-
-              <div id="plumaunica">
-
-              </div>
-
-              <div id="plumaunica">
-
-              </div>
-
-              <div id="plumaunica">
-
-              </div>
-      
-       <button id="anterior" type="button" class="btn btn-dark">Anterior</button>
-       <button id="siguiente" type="button" class="btn btn-dark">Siguiente</button>
+  <div class="container well">
+    <div class="row">
+      <div class="col-xs-12">
+        <h1>Tu Perfil de Usuario</h1>
       </div>
+    </div>
+    <br /><br />
+  </div>
 
+  <div class="container emp-profile">
+    <form method="post">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="profile-img">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52y5aInsxSm31CvHOFHWujqUx_wWTS9iM6s7BAm21oEN_RiGoog" alt=""/>
+                    <div class="file btn btn-lg btn-primary">
+                        Cambiar Fotografía
+                        <input type="file" name="file"/>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="profile-head">
+                            <h5>
+                                Maricela Antunez
+                            </h5>
+                            <h6>
+                                Usuario
+                            </h6>
+                            <p class="proile-rating">PLAN DUNAMIS : <span>Gratuito</span></p>
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Información</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Información extra</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Editar Perfil"/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="profile-work">
+                    <p>ENLACE CON REDES SOCIALES</p>
+                    <a href="">FACEBOOK</a><br/>
+                    <a href="">TWITTER</a><br/>
+                    <a href="">LINKEDIN</a><br/>
+                    <a href="">GIT HUB</a><br/>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="tab-content profile-tab" id="myTabContent">
+                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                <div class="row">
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>Nombre</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>Kshiti Ghelani</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>Email (correo electronico)</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>kshitighelani@gmail.com</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>Teléfono</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>123 456 7890</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>País</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>Honduras</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>Sexo</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>Femenino</p>
+                                    </div>
+                                </div>
+                    </div>
+                    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>Fecha de Nacimiento</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>12/12/12</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>Dirección</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>Colonia Villanueva sector 2 Tegucigalpa Honduras</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>Descripción</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>Soy alegre, dinamica, entusiasta, y trabajadora </p>
+                                    </div>
+                                </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>           
+</div>
+
+
+
+
+
+
+  <div>
+    <footer>
+      <div class="footer-container">
+        <div class="footer-main">
+          <div class="footer-columna">
+            <h3>Registrate</h3>
+            <input type="email" placeholder="Escriba su Correo o Teléfono">
+            <input type="submit" value="Suscribirse">
+          </div>
+          <div class="footer-columna">
+            <h3>Dirección</h3>
+            <span class="fa fa-map-marker">
+              <p>Colonia Villanueva Sector 7A Tegucigalpa Honduras</p>
+            </span>
+            <span class="fa fa-phone">
+              <p>(+504 9906-2425)</p>
+            </span>
+            <span class="fa fa-envelope">
+              <p>misaelchacon17@yahoo.es</p>
+            </span>
+          </div>
+          <div class="footer-columna">
+            <h3>Sobre Nosotros</h3>
+            <p>Somos una empresa para desarrolladores totalmente diferente, facil de usar y de rapido acceso</p>
+          </div>
+        </div>
       </div>
+      <div class="footer-copy-redes">
+        <div class="main-copy-redes">
+          <div class="footer-copy">
+            <p class="footer-text">
+              Copyright &copy;<script>
+                document.write(new Date().getFullYear());
+              </script> Todos los derechos reservados | Dunamis Digitales</a>
+            </p>
+          </div>
+          <div class="footer-redes">
+            <a href="#" img src="img/logoFacebook.png" alt="Facebook" class="fa fa-facebook"></a>
+            <a href="#" img src="img/logoTwiter.png" alt="Twiter" class="fa fa-twitter"></a>
+            <a href="#" img src="img/logogithub.png" alt="Github" class="fa fa-github"></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
 
-     
-      <div>
-          <footer>
-            <div class="footer-container">
-              <div class="footer-main">
-                   <div class="footer-columna">
-                     <h3>Registrate</h3>
-                     <input type="email" placeholder="Escriba su Correo o Teléfono">
-                     <input type="submit" value="Suscribirse">
-                   </div>
-                   <div class="footer-columna">
-                     <h3>Dirección</h3>
-                     <span class="fa fa-map-marker"><p>Colonia Villanueva Sector 7A Tegucigalpa Honduras</p></span>
-                     <span class="fa fa-phone"><p>(+504 9906-2425)</p></span>
-                     <span class="fa fa-envelope"><p>misaelchacon17@yahoo.es</p></span>
-                   </div>
-                   <div class="footer-columna">
-                     <h3>Sobre Nosotros</h3>
-                     <p>Somos una empresa para desarrolladores totalmente diferente, facil de usar y de rapido acceso</p>
-                   </div>
-              </div>
-            </div>
-            <div class="footer-copy-redes">
-              <div class="main-copy-redes">
-                <div class="footer-copy">
-                    <p class="footer-text">									
-                        Copyright &copy;<script>document.write(new Date().getFullYear());</script> Todos los derechos reservados | Dunamis Digitales</a>
-                      </p>
-                </div>
-                <div class="footer-redes">
-                  <a href="#" img src="img/logoFacebook.png" alt="Facebook" class="fa fa-facebook"></a>
-                  <a href="#" img src="img/logoTwiter.png" alt="Twiter" class="fa fa-twitter"></a>
-                  <a href="#" img src="img/logogithub.png" alt="Github" class="fa fa-github"></a>
-                </div>
-              </div>
-            </div>
-          </footer>
-         </div>
-        
 
   </div>
 
- 
-    <script src="main.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+  <script src="main.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <script src="js/bootstrap.js"></script>
 </body>
 
 </html>>

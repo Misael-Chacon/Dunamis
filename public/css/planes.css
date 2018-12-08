@@ -6,7 +6,7 @@
 
  .plan{
     margin: auto; 
-    margin-top: 110px;
+    margin-top: auto;
     color: rgb(255, 255, 255);
     width: auto;
     font-size: 50px;
@@ -43,6 +43,10 @@
   }
  #todocuadro{
      background-color: white;
+ }
+
+ div#cerrar{
+display: flex; justify-content: center; align-items: center;
  }
 
  
