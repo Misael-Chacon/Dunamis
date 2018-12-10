@@ -8,7 +8,7 @@ $(document).ready(function(){
             //console.log(res);
             for (var i=0;i<res.length;i++){
                 $("#pais").append(`<option value="${res[i].codigo_pais}">${res[i].nombre_pais}</option>`);
-            };
+            }
         },
         error:function(error){
             console.error(error);
@@ -23,10 +23,10 @@ $("#registrar").click(function(){
 		url:"/guardarregistro",
 		method:"POST",
 		data: parametros,
-		dataType:"json", //json
-		success: function(res){ //200 OK
+		dataType:"json", 
+		success: function(res){ 
             console.log(res);
-            window.location.replace("/sesioniniciada.html");
+            window.location.href = "/sesionusuario.html";
 		},
 		error:function(error){
 			console.error(error);

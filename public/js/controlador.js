@@ -6,14 +6,13 @@ function seleccionarUsuario(username, foto) {
 
 $(document).ready(function () {
     $.ajax({
-        url: "/usuarios",
+        url:"/usuarios",
         method: "POST",
         dataType: "json",
         success: function (res) {
             console.log(res);
-            for (var i = 0; i < res.length; i++) {
-                $("#nombreusuario").append(`<h5>${res[i].username}</h5>`);
-                $("#fotousuario").append(`${res[i].foto}`);
+            for (var i=0;i<res.length;i++){
+                $("#nombreusuario").append(`${res[i].username}`);
             }
         },
         error: function (error) {
