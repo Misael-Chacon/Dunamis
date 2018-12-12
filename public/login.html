@@ -14,55 +14,43 @@
       <link rel="stylesheet" type="text/css" media="all" href="css/login.css" />
 </head>
 
-<body style="background-color: rgb(0,50,50)">
-      <div>
-            <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-                  <a class="navbar-brand" href="index.html"><img src="img/DigitalesDunamis.png" class="logo-dunamis"></a>
-                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
-                        aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                  </button>
+<body style=" background-color: rgb(0,50,50)">
+      <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+            <a class="navbar-brand" href="index.html"><img src="img/DigitalesDunamis.png" class="logo-dunamis"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+                  aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+            </button>
 
-                  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-                        <form id="formulario-login" class="form-inline my-2 my-lg-0 ml-auto">
-                              <a href="registrogratis.html" class="btn btn-primary my-2 my-sm-0" type="submit">Registrarse</a>
-                        </form>
-                  </div>
-            </nav>
-      </div>
-      <br>
-
-      <div class="container-fluido" class=".d-none .d-sm-block">
-            <div class="row">
-                  <div class="registro" class=".d-none .d-sm-block" class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                        <h2>INICIAR SESION</h2>
-                        <br>
-                        <form id="formulario">
-                              <div>
-                                    <input class="form-control" type="email" id="correo" name="" placeholder="Direccion de Correo Electronico"
-                                          required autofocus>
-                                    <label for="correo">Email address</label>
-                              </div>
-                              <div>
-                                    <input class="form-control" type="password" id="contrasena" name=""
-                                          placeholder="Contraseña minimo 8 caracteres" required>
-                                    <label for="contrasena">Password</label>
-                              </div>
-
-                              <button class="btn btn-primary btn-block" type="button" id="btn-login">Iniciar Sesión</button>
-                             
-                        </form>
-                  </div>
-
-                  <div class="loginredes" class=".d-none .d-sm-block" class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                        <button id="botontwitter" type="button" class="btn btn-info">Iniciar sesion con Twitter
-                        </button>
-                        <button id="botongithub" type="button" class="btn btn-secondary">Iniciar sesion con Git Hub
-                        </button>
-                        <button id="botonfacebook" type="button" class="btn btn-primary">Iniciar sesión con Facebook</button>
-                  </div>
+            <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+                  <form id="formulario-login" class="form-inline my-2 my-lg-0 ml-auto">
+                        <a href="registrogratis.html" class="btn btn-primary my-2 my-sm-0" type="submit">Registrarse</a>
+                  </form>
             </div>
-      </div>
+      </nav>
+
+      <div class="container-fluido" class= ".d-none .d-sm-block">
+                  <div class="row">
+                     <div class="registro" class= ".d-none .d-sm-block">
+                         <h2>INICIAR SESION</h2>
+                         <form class="formulario">
+                         <h6>Escribe tu correo electrónico:</h6> 
+                         <input class="form-control" type="email" id="correo" name="" placeholder="Direccion de Correo Electronico">
+                         <br/>
+                         <h6> Contraseña: </h6>
+                         <input class="form-control" type="password" id="contrasena" name="" placeholder="Contraseña minimo 8 caracteres">
+                         <br/>
+                         <button class="btn btn-primary btn-block" type="button" id="btn-login">Iniciar Sesión</button>
+                         <br>
+                       </form> 
+                      </div>
+                   <div class="loginredes" class= ".d-none .d-sm-block">
+                         <button id="botontwitter" type="button" class="btn btn-info">Iniciar sesion con Twitter </button>
+                         <button id="botongithub" type="button" class="btn btn-secondary">Iniciar sesion con Git Hub </button>
+                         <button id="botonfacebook" type="button" class="btn btn-primary">Iniciar sesión con Facebook</button>
+                   </div>
+              </div>
+              </div>
       <br>
 
 
@@ -92,7 +80,7 @@
             <br>
             </div>
       </footer>
-     
+
       <script src="js/jquery.min.js"></script>
       <script src="js/logincontrolador.js"></script>
       <script type="text/javascript" src="js/bootstrap.min.js"></script>

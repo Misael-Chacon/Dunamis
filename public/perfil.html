@@ -18,7 +18,7 @@
 <body>
 
   <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-    <a class="navbar-brand" href="index.html"><img src="img/DigitalesDunamis.png" class="logo-dunamis"></a>
+    <a class="navbar-brand"  href="sesionusuario.html"><img src="img/DigitalesDunamis.png" class="logo-dunamis"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
       aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -43,8 +43,6 @@
         </div>
 
         <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
-          <button type="button" class="btn btn-secondary">1</button>
-          <button type="button" class="btn btn-secondary">2</button>
           <div class="btn-group" role="group">
             <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown"
               aria-haspopup="true" aria-expanded="false">
@@ -58,7 +56,12 @@
             </div>
           </div>
         </div>
-
+        <div id="fotousuario">
+            </div>
+            <div>
+            <div id="nameusuario" style="color:white">
+            </div>
+            </div>
       </form>
     </div>
   </nav>
@@ -76,23 +79,18 @@
     <form method="post">
         <div class="row">
             <div class="col-md-4">
-                <div class="profile-img">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52y5aInsxSm31CvHOFHWujqUx_wWTS9iM6s7BAm21oEN_RiGoog" alt=""/>
-                    <div class="file btn btn-lg btn-primary">
-                        Cambiar Fotografía
-                        <input type="file" name="file"/>
-                    </div>
+                <div id="foto" class="profile-img">
                 </div>
+                
             </div>
             <div class="col-md-6">
                 <div class="profile-head">
-                            <h5>
-                                Maricela Antunez
-                            </h5>
+                    <div id="username">
+                    </div>
                             <h6>
                                 Usuario
                             </h6>
-                            <p class="proile-rating">PLAN DUNAMIS : <span>Gratuito</span></p>
+                            <p class="proile-rating">PLAN DUNAMIS : <span id="plan"></span></p>
                     <ul class="nav nav-tabs" id="myTab" role="tablist">
                         <li class="nav-item">
                             <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Información</a>
@@ -104,17 +102,19 @@
                 </div>
             </div>
             <div class="col-md-2">
-                <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Editar Perfil"/>
+                <a href="perfilActualizado.html"><input type="button" class="profile-edit-btn" name="btnAddMore" value="Editar Perfil"/></a>
+                <br> <br>
+                <a href="sesioniniciada.html"><input type="button" class="profile-edit-btn" name="btnAddMore" value="Cancelar"/></a>
             </div>
         </div>
         <div class="row">
             <div class="col-md-4">
                 <div class="profile-work">
                     <p>ENLACE CON REDES SOCIALES</p>
-                    <a href="">FACEBOOK</a><br/>
-                    <a href="">TWITTER</a><br/>
-                    <a href="">LINKEDIN</a><br/>
-                    <a href="">GIT HUB</a><br/>
+                   <div id="urlfacebook"></div>
+                   <div id="urltwitter"></div>
+                   <div id="urllinkedin"></div>
+                   <div id="urlgithub"></div>
                 </div>
             </div>
             <div class="col-md-8">
@@ -123,43 +123,38 @@
                                 <div class="row">
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-6">
+                                    <div id="nombre"class="col-md-6">
                                         <label>Nombre</label>
                                     </div>
-                                    <div class="col-md-6">
-                                        <p>Kshiti Ghelani</p>
+                                    <div id="nombrecompleto"class="col-md-6">
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-6">
                                         <label>Email (correo electronico)</label>
                                     </div>
-                                    <div class="col-md-6">
-                                        <p>kshitighelani@gmail.com</p>
+                                    <div id="email"class="col-md-6">
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-6">
                                         <label>Teléfono</label>
                                     </div>
-                                    <div class="col-md-6">
-                                        <p>123 456 7890</p>
+                                    <div id="telefono"class="col-md-6">
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-6">
                                         <label>País</label>
                                     </div>
-                                    <div class="col-md-6">
-                                        <p>Honduras</p>
+                                    <div id="pais"class="col-md-6">
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-6">
                                         <label>Sexo</label>
                                     </div>
-                                    <div class="col-md-6">
-                                        <p>Femenino</p>
+                                    <div id="sexo"class="col-md-6">
                                     </div>
                                 </div>
                     </div>
@@ -168,24 +163,21 @@
                                     <div class="col-md-6">
                                         <label>Fecha de Nacimiento</label>
                                     </div>
-                                    <div class="col-md-6">
-                                        <p>12/12/12</p>
+                                    <div id="fechanacimiento"class="col-md-6">
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-6">
                                         <label>Dirección</label>
                                     </div>
-                                    <div class="col-md-6">
-                                        <p>Colonia Villanueva sector 2 Tegucigalpa Honduras</p>
+                                    <div id="direccion"class="col-md-6">
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-6">
                                         <label>Descripción</label>
                                     </div>
-                                    <div class="col-md-6">
-                                        <p>Soy alegre, dinamica, entusiasta, y trabajadora </p>
+                                    <div id="biografia"class="col-md-6">
                                     </div>
                                 </div>
                     </div>
@@ -249,12 +241,9 @@
 
   </div>
 
-
-  <script src="main.js"></script>
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
-  <script type="text/javascript" src="js/bootstrap.min.js"></script>
-  <script src="js/bootstrap.js"></script>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/controlPerfil.js"></script>
+   <script src="js/bootstrap.min.js"></script>
 </body>
 
 </html>>

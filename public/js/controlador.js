@@ -1,22 +1,22 @@
-//Se cargo el nombre del usuario y la foto en inicio de sesion
-function seleccionarUsuario(username, foto) {
-    $("#nombreusuario").val(username);
-    $("#fotousuario").attr("src", foto);
-}
 
-$(document).ready(function () {
-    $.ajax({
-        url:"/usuarios",
-        method: "POST",
-        dataType: "json",
-        success: function (res) {
-            console.log(res);
-            for (var i=0;i<res.length;i++){
-                $("#nombreusuario").append(`${res[i].username}`);
-            }
-        },
-        error: function (error) {
-            console.error(error);
-        }
+var controller = {};
+//Se cargo el nombre del usuario y la foto en inicio de sesion
+$(document).ready(function(){
+	$.ajax({
+		url:"/usuarios",
+		method:"GET",
+		dataType:"json",
+		success:function(res){
+			//console.log(res);
+				$("#nameusuario").append(` ${res[0].username}`);
+				$("#fotousuario").append(
+                    `<div class="avatar-icon">
+						<img src="${res[0].foto}" style="width: 50px; height: 60px">
+					</div>`			
+				);
+		},
+		error:function(error){
+			console.error(error);
+		}
     });
-})
+});

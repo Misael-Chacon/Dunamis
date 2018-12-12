@@ -4,19 +4,13 @@
     box-sizing: border-box;
   }
 
-  .signup-header{
-    width: 550px;
-    height: 120px;
-    background-color: rgb(85, 233, 55); 
-    margin-top: 100px;
-    margin-left: auto;
-    margin-right: auto;
-    text-align:center;
-    box-align: center;
-    box-sizing: border-box;
-    font-weight: bold;
-    border-radius: 4px;
-}
+  .container {
+    max-width: 960px;
+  }
+  
+  .lh-condensed { line-height: 1.25; }
+  
+
 #arranque{
     background-color: rgb(55, 227, 233);
 }
@@ -27,31 +21,6 @@
     background-color: rgb(229, 173, 82);
 }
 
-.container-fluid{
-    width: 550px;
-    height: 720px;
-    text-align:center;
-    padding: 3rem, 3rem, 3rem, 3rem;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top:auto;
-    background: rgb(207, 205, 205);
-    box-align: center;
-    color: brown;
-    border-radius: 4px;
-}
-.formulario{
-    width: 300px;
-    height: 550px;
-    text-align:left;
-    padding: 3rem, 3rem, 3rem, 5rem;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 10px;
-    box-align: center;
-    font-size: 12px;
-    box-sizing: border-box;
-}
 .registro{
     width: 300px;
     height: 550px;
@@ -62,6 +31,7 @@
     margin-top: 10px;
     border-radius: 3px;
   }
+
   .plan{
     width: 200px;
     height: 700px;
