@@ -11,6 +11,13 @@ var credenciales = {
     host: "localhost",
     port: "3306"
 };
+
+var publicAdmin = express.static("public-admin");
+var publicUsuario = express.static("public-usuario");
+
+var codigoUsuario = null;
+var correoUsuario = null;
+var codigoTipoUsuario = null;
 //Exponer una carpeta como publica, unicamente para archivos estaticos: .html, imagenes, .css, .js
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
@@ -22,9 +29,6 @@ app.use(session({
     resave: true,
     saveUninitialized: true
 }));
-var publicAdmin = express.static("public-admin");
-var publicUsuario = express.static("public-usuario");
-
 app.use(
     function (req, res, next) {
         if (req.session.correoUsuario) {
@@ -43,7 +47,7 @@ app.use(
             return next();
     }
 );
-
+//RUTAS
 app.get("/paices", function (req, res) {
     var conexion = mysql.createConnection(credenciales);
     conexion.query("SELECT codigo_pais, nombre_pais FROM tbl_paises",
@@ -51,13 +55,18 @@ app.get("/paices", function (req, res) {
         function (error, data, fields) {
             if (error)
                 res.send(error);
-            else
-                res.send(data);
+            else {
+                for (var i = 0; i < res.length; i++) {
+                    $("#pais").append(
+                        `<option value="${data[i].codigo_pais}">${data[i].nombre_pais}</option>`
+                    );
+                }
+            }
+            res.send(data);
             res.end();
         }
     );
 });
-
 
 ///Para agregar seguridad a una ruta especifica:
 function verificarAutenticacion(req, res, next) {
@@ -68,20 +77,24 @@ function verificarAutenticacion(req, res, next) {
 }
 
 
-app.post("/login",function(req, res){
+app.post("/login", function (req, res) {
     var conexion = mysql.createConnection(credenciales);
     conexion.query(
         "SELECT codigo_usuario, correo, codigo_tipo_usuario FROM tbl_usuarios WHERE contrasenia = ? and correo=?",
         [req.body.contrasena, req.body.correo],
-        function(error, data, fields){
-            if (error){
+        function (error, data, fields) {
+            if (error) {
                 res.send(error);
                 res.end();
-            }else{
-                if (data.length==1){
+            } else {
+                console.log(res);
+                if (data.length == 1) {
                     req.session.codigoUsuario = data[0].codigo_usuario;
                     req.session.correoUsuario = data[0].correo;
-                    req.session.codigoTipoUsuario = data[0].codigo_tipo_usuario
+                    req.session.codigoTipoUsuario = data[0].codigo_tipo_usuario;
+                    codigoUsuario = req.session.codigoUsuario;
+                    correoUsuario = req.session.correoUsuario;
+                    codigoTipoUsuario = req.session.codigoTipoUsuario;
                 }
                 res.send(data);
                 res.end();
@@ -90,28 +103,33 @@ app.post("/login",function(req, res){
     )
 });
 
-app.post("/usuarios", function (req, res) {
+app.get("/usuarios", function (req, res) {
     var conexion = mysql.createConnection(credenciales);
-    conexion.query(
-        "SELECT codigo_usuario, nombre_completo, correo, username, genero, telefono, descripcion, direccion, fecha_nacimiento, codigo_tipo_usuario, codigo_plan, codigo_pais, foto FROM tbl_usuarios WHERE codigo_usuario = ?",
-        [req.session.codigoUsuario],
-        function (error, data, fields){
-            if (error){
+    conexion.query(`select a.nombre_completo, a.correo, a.username, 
+    a.genero, a.telefono, a.descripcion, a.direccion, a.foto, a.fecha_nacimiento, 
+    b.nombre_plan,c.nombre_pais,d.nombre_tipo_usuario, i.url_facebook, j.url_twitter, 
+    k.url_linkedin, l.url_github 
+    from tbl_usuarios a 
+    inner join tbl_planes b 
+    on(a.codigo_plan = b.codigo_plan)
+    inner join tbl_paises c
+    on(a.codigo_pais = c.codigo_pais)
+    inner join tbl_tipo_usuario d
+    on(a.codigo_tipo_usuario = d.codigo_tipo_usuario) 
+    left join tbl_facebook i
+    on(a.codigo_usuario = i.codigo_usuario)
+    left join tbl_twitter j
+    on(a.codigo_usuario = j.codigo_usuario)
+    left join tbl_linkedin k
+    on(a.codigo_usuario = k.codigo_usuario)
+    left join tbl_github l
+    on(a.codigo_usuario = l.codigo_usuario) WHERE a.codigo_usuario = ?`,
+        [codigoUsuario],
+        function (error, data, fields) {
+            if (error) {
                 res.send(error);
                 res.end();
             } else {
-                if (data.length == 1) {
-                    req.session.nombre_completo = data[0].nombre_completo;
-                    req.session.username = data[0].username;
-                    req.session.genero = data[0].genero;
-                    req.session.telefono = data[0].telefono;
-                    req.session.descripcion = data[0].descripcion;
-                    req.session.direccion = data[0].direccion;
-                    req.session.fechaNacimiento = data[0].fecha_nacimiento;
-                    req.session.codigoPlan = data[0].codigo_plan;
-                    req.session.codigoPais = data[0].codigo_pais;
-                    req.session.foto = data[0].foto
-                }
                 res.send(data);
                 res.end();
                 conexion.end();
@@ -119,7 +137,7 @@ app.post("/usuarios", function (req, res) {
         }
     )
 });
-
+/*
 app.get("/obtener-session", function (req, res) {
     res.send("Codigo Usuario: " + req.session.codigoUsuario +
         ", Correo: " + req.session.correoUsuario +
@@ -138,30 +156,53 @@ app.get("/contenido-registringido", verificarAutenticacion, function (req, res) 
     res.send("Este es un contenido restringido");
     res.end();
 });
-
-app.post("/guardarregistro", function (req, res) {
+*/
+app.get("/guardarregistro", function (req, res) {
     var conexion = mysql.createConnection(credenciales);
-    conexion.query("INSERT INTO tbl_usuarios(nombre_completo, correo, username, contrasenia, genero, codigo_pais, codigo_plan) VALUES (?,?,?,?,?,?,1)",
-        [req.body.nombrecompleto,
-            req.body.correo,
-            req.body.nombreusuario,
-            req.body.password,
-            req.body.genro,
-            req.body.pais
+    conexion.query("INSERT INTO tbl_usuarios(nombre_completo, correo, username, contrasenia, genero, codigo_pais, codigo_plan, codigo_tipo_usuario) VALUES (?,?,?,?,?,?,1,2)",
+        [req.query.nombrecompleto,
+         req.query.correo,
+         req.query.nombreusuario,
+         req.query.password,
+         req.query.genero,
+         req.query.pais,
         ],
         function (error, data, fields) {
-            if (error)
+            if (error) {
                 res.send(error);
-            else
-                res.send(data);
-            res.end();
+                res.end();
+            } else {
+                res.redirect('/login.html');
+               res.end();
+            }
         }
     );
 });
 
+app.get("/actualizar", function (req, res) {
+    var query = "UPDATE `tbl_usuarios`SET";
+        query += "`telefono`='"+req.query.txtName+"',";
+        query += "`descripcion`='"+req.query.txtBiography+"',";
+        query += "`direccion`='"+req.query.txtdireccion+"',";
+        query += "`fecha_nacimiento`='"+req.query.txtSurname+"'";
+        query += "WHERE `tbl_usuarios`.`codigo_usuario` = "+codigoUsuario+"";
 
+    var conexion = mysql.createConnection(credenciales);
+    conexion.query(query, function (error, data, fields){
+            if (error) {
+                res.send(error);
+                res.end();
+            } else {
+               res.send(data); 
+               res.end();
+            }
+        }
+    );
+});
 
 //Crear y levantar el servidor web.
-app.listen(8111);
+app.set('port', process.env.PORT || 8111);
+app.listen(app.get('port'), () => {
+    console.log(`SERVIDOR INICIADO EN EL PUERTO ${app.get('port')}`);
+});
 //var io = require('socket.io').listen(server);
-console.log("Servidor inciado");
