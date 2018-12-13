@@ -14,9 +14,9 @@
 </head>
 
 <body style="background-color: rgb(0,50,50)">
-
+<div>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-        <a class="navbar-brand" href="sesionusuario.html"><img src="img/DigitalesDunamis.png" class="logo-dunamis"></a>
+        <a class="navbar-brand" href="sesioniniciada.html"><img src="img/DigitalesDunamis.png" class="logo-dunamis"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
             aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -24,9 +24,9 @@
 
         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
             <form id="formulario-login" class="form-inline my-2 my-lg-0 ml-auto">
-                <button type="button" id="boton" class="btn btn-outline-light">Proyectos</button>
-                <button type="button" id="boton" class="btn btn-outline-warning">Mensajes</button>
-                <button type="button" id="boton" class="btn btn-outline-light">Colecciones</button>
+             <a href="#proyectos"><button type="button" href="#proyectos" class="btn btn-outline-light">Proyectos</button></a>
+             <a href="#mensajes"><button type="button" id="Mensajes" class="btn btn-outline-warning">Mensajes</button></a>
+             <a href="#colecciones">   <button type="button" id="Colecciones" class="btn btn-outline-light">Colecciones</button></a>
 
                 <div class="dropdown">
                     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
@@ -34,9 +34,9 @@
                         Crear
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="#">Nuevo Proyecto</a>
-                        <a class="dropdown-item" href="#">Nuevo Mensaje</a>
-                        <a class="dropdown-item" href="#">Nueva Colección</a>
+                        <a class="dropdown-item" id="nuevoproyecto" href="proyectonuevo.html">Nuevo Proyecto</a>
+                        <a class="dropdown-item" id="nuevomensaje" href="#">Nuevo Mensaje</a>
+                        <a class="dropdown-item" id="nuevacoleccion"href="#">Nueva Colección</a>
                     </div>
                 </div>
 
@@ -65,6 +65,10 @@
             </form>
         </div>
     </nav>
+</div>
+    <div id="proyectos" style="height: auto;">
+        <hr>
+    </div>
 
     <main role="main" class="container">
         <div class="container-fluid">
@@ -154,14 +158,17 @@
                 </div>
             </main>
 
-            <br>
-            <div class="container">
+            <hr>
+            <div id="mensajes">
+                </div>
+            <div class="container justify-content-center">
                 <div class="row justify-content-center justify-content-md-center justify-content-sm-center justify-content-lg-center">
                     <a href="#"><button id="anterior" type="button" class="btn btn-dark">Anterior</button></a>
                     <a href="#"><button id="siguiente" type="button" class="btn btn-dark">Siguiente</button></a> </a>
                 </div>
             </div>
 
+            <hr>
             <main role="main" class="container">
                 <div class="container-fluid">
                     <div class="row">
@@ -243,7 +250,7 @@
                     </div>
                 </div>
             </main>
-
+            <div id="colecciones"><div>
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                 <br>
                 <button id="anterior" type="button" class="btn btn-dark">Anterior</button>
@@ -252,7 +259,7 @@
                 <br>
             </div>
 
-            <main role="main" class="container">
+            <main id="colecciones" role="main" class="container">
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12" styles=" text-align:center; position:center">
