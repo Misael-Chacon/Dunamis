@@ -161,11 +161,11 @@ app.get("/guardarregistro", function (req, res) {
     var conexion = mysql.createConnection(credenciales);
     conexion.query("INSERT INTO tbl_usuarios(nombre_completo, correo, username, contrasenia, genero, codigo_pais, codigo_plan, codigo_tipo_usuario) VALUES (?,?,?,?,?,?,1,2)",
         [req.query.nombrecompleto,
-         req.query.correo,
-         req.query.nombreusuario,
-         req.query.password,
-         req.query.genero,
-         req.query.pais,
+            req.query.correo,
+            req.query.nombreusuario,
+            req.query.password,
+            req.query.genero,
+            req.query.pais,
         ],
         function (error, data, fields) {
             if (error) {
@@ -173,31 +173,104 @@ app.get("/guardarregistro", function (req, res) {
                 res.end();
             } else {
                 res.redirect('/login.html');
-               res.end();
+                res.end();
             }
-        }
-    );
+        });
 });
 
-app.get("/actualizar", function (req, res) {
-    var query = "UPDATE `tbl_usuarios`SET";
-        query += "`telefono`='"+req.query.txtName+"',";
-        query += "`descripcion`='"+req.query.txtBiography+"',";
-        query += "`direccion`='"+req.query.txtdireccion+"',";
-        query += "`fecha_nacimiento`='"+req.query.txtSurname+"'";
-        query += "WHERE `tbl_usuarios`.`codigo_usuario` = "+codigoUsuario+"";
-
+app.get("/pago", function (req, res) {
     var conexion = mysql.createConnection(credenciales);
-    conexion.query(query, function (error, data, fields){
+    conexion.query("INSERT INTO tbl_creditos(nombre_tarjeta, numero_tarjeta, vencimiento, codigo_seguridad, tipo_pago, codigo_plan) VALUES (?,?,?,?,?,?)",
+        [req.query.nombretarjeta,
+            req.query.numerotarjeta,
+            req.query.vencimiento,
+            req.query.codigotarjeta,
+            req.query.paymentMethod,
+            req.query.codigoplan,
+        ],
+        function (error, data, fields) {
             if (error) {
                 res.send(error);
                 res.end();
             } else {
-               res.send(data); 
-               res.end();
+                var query = "UPDATE `tbl_usuarios`SET";
+                query += "`codigo_plan`='" + req.query.codigoplan + "'";
+                query += "WHERE `tbl_usuarios`.`codigo_usuario` = " + codigoUsuario + "";
+                var conexion = mysql.createConnection(credenciales);
+                conexion.query(query, function (error, data, fields) {
+                    if (error) {
+                        res.send(error);
+                        res.end();
+                    } else {
+                        res.redirect('/sesioniniciada.html');
+                        res.end();
+                    }
+                });
             }
+        });
+});
+
+app.get("/actualizar", function (req, res) {
+    var query = "UPDATE `tbl_usuarios`SET";
+    query += "`telefono`='" + req.query.txtelefono + "',";
+    query += "`descripcion`='" + req.query.txtBiography + "',";
+    query += "`direccion`='" + req.query.txtdireccion + "',";
+    query += "`fecha_nacimiento`='" + req.query.txtfecha + "'";
+    query += "WHERE `tbl_usuarios`.`codigo_usuario` = " + codigoUsuario + "";
+    var conexion = mysql.createConnection(credenciales);
+    conexion.query(query, function (error, data, fields) {
+        if (error) {
+            res.send(error);
+            res.end();
+        } else {
+            var query = "UPDATE `tbl_facebook`SET";
+            query += "`url_facebook`='" + req.query.txtFacebook + "'";
+            query += "WHERE `tbl_facebook`.`codigo_usuario` = " + codigoUsuario + "";
+            var conexion = mysql.createConnection(credenciales);
+            conexion.query(query, function (error, data, fields) {
+                if (error) {
+                    res.send(error);
+                    res.end();
+                } else {
+                    var query = "UPDATE `tbl_twitter`SET";
+                    query += "`url_twitter`='" + req.query.txtTwitter + "'";
+                    query += "WHERE `tbl_twitter`.`codigo_usuario` = " + codigoUsuario + "";
+                    var conexion = mysql.createConnection(credenciales);
+                    conexion.query(query, function (error, data, fields) {
+                        if (error) {
+                            res.send(error);
+                            res.end();
+                        } else {
+                            var query = "UPDATE `tbl_linkedin`SET";
+                            query += "`url_linkedin`='" + req.query.txtLinkedin + "'";
+                            query += "WHERE `tbl_linkedin`.`codigo_usuario` = " + codigoUsuario + "";
+                            var conexion = mysql.createConnection(credenciales);
+                            conexion.query(query, function (error, data, fields) {
+                                if (error) {
+                                    res.send(error);
+                                    res.end();
+                                } else {
+                                    var query = "UPDATE `tbl_github`SET";
+                                    query += "`url_github`='" + req.query.txtPlus + "'";
+                                    query += "WHERE `tbl_github`.`codigo_usuario` = " + codigoUsuario + "";
+                                    var conexion = mysql.createConnection(credenciales);
+                                    conexion.query(query, function (error, data, fields) {
+                                        if (error) {
+                                            res.send(error);
+                                            res.end();
+                                        } else {
+                                            res.send(data);
+                                            res.end();
+                                        }
+                                    });
+                                }
+                            });
+                        }
+                    });
+                }
+            });
         }
-    );
+    });
 });
 
 //Crear y levantar el servidor web.
