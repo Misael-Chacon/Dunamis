@@ -18,7 +18,7 @@
 <body>
 
     <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-        <a class="navbar-brand" href="sesionusuario.html"><img src="img/DigitalesDunamis.png" class="logo-dunamis"></a>
+        <a class="navbar-brand" href="sesioniniciada.html"><img src="img/DigitalesDunamis.png" class="logo-dunamis"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
             aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -26,10 +26,10 @@
 
         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
             <form id="formulario-login" class="form-inline my-2 my-lg-0 ml-auto">
-                <button type="button" id="boton" class="btn btn-outline-light">Proyectos</button>
-                <button type="button" id="boton" class="btn btn-outline-warning">Mensajes</button>
-                <button type="button" id="boton" class="btn btn-outline-light">Colecciones</button>
-
+                    <a href="sesioniniciada.html#proyectos"><button type="button" href="#proyectos" class="btn btn-outline-light">Proyectos</button></a>
+                    <a href="sesioniniciada.html#mensajes"><button type="button" id="Mensajes" class="btn btn-outline-warning">Mensajes</button></a>
+                    <a href="sesioniniciada.html#colecciones">   <button type="button" id="Colecciones" class="btn btn-outline-light">Colecciones</button></a>
+          
                 <div class="dropdown">
                     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">
@@ -96,14 +96,14 @@
                                     <label>Introduzca su numero telefónico</label>
                                     <span id="alertName" data-toggle="popover" data-trigger="hover" data-placement="right"
                                         title="" data-content="">
-                                        <input type="text" class="form-control" id="txtName" placeholder="Introduzca su teléfono"
+                                        <input type="text" class="form-control" id="txtelefono" placeholder="Introduzca su teléfono"
                                             required data-validation-required-message="Por favor introduzca su Teléfono.">
                                     </span>
                                     <br>
                                     <label>Seleccione la fecha de su nacimiento:</label>
                                     <span id="alertSurname" data-toggle="popover" data-trigger="hover" data-placement="right"
                                         title="" data-content="">
-                                        <input type="date" class="form-control" id="txtSurname" placeholder="Fecha de Nacimiento"
+                                        <input type="date" class="form-control" id="txtfecha" placeholder="Fecha de Nacimiento"
                                             required data-validation-required-message="Por favor seleccione su fecha de nacimiento.">
                                     </span>
 
@@ -128,21 +128,6 @@
                                     <br>
                                 </div>
                             </div>
-                            <!-- Botones formulario -->
-                            <div class="col-md-12 container allFormButtons">
-                                <div class="row">
-                                    <br>
-                                    <div class="col-md-12 col-md-offset-2">
-                                        <div class="form-group">
-                                            <a href="perfil.html"><button type="button" id="btnCancel" class="btn btn-danger">Cancelar</button></a>
-                                            <button type="button" id="btnupdate" class="btn btn-primary">Actualizar</button>
-                                        </div>
-                                    </div>
-                                    &nbsp;
-                                </div>
-                            </div>
-                            <!-- Fin botones formulario -->
-
                         </div>
                     </div>
                     <!-- Fin del div central parte de formulario información básica -->
@@ -150,8 +135,8 @@
                 <!-- Fin del form -->
             </div>
             <!-- Parte central - enlaces -->
-            <div class="col-md-6" style="border: 1px 1px 1px 1px lightgrey; background: #e5eaf2;">
-                <!-- Parte de redes sociales en el alta de perfil -->
+            <div class="col-md-6" style="border-width: 1px 1px 0px 1px; border-style: solid; border-color: lightgrey; background: #f1f3f6;">
+                    <!-- Parte de redes sociales en el alta de perfil -->
                 <div class="col-md-12 col-md-offset-2">
                     <div class="control-group form-group">
                         <div class="controls">
@@ -181,6 +166,20 @@
                     </div>
                 </div>
                 <!-- Fin Parte de redes sociales en el alta de perfil -->
+                <!-- Botones formulario -->
+                <div class="col-md-12 container allFormButtons">
+                    <div class="row">
+                        <br>
+                        <div class="col-md-12 col-md-offset-2">
+                            <div class="form-group">
+                                <a href="perfil.html"><button type="button" id="btnCancel" class="btn btn-danger">Cancelar</button></a>
+                                <button type="button" id="btnupdate" class="btn btn-primary">Actualizar</button>
+                            </div>
+                        </div>
+                        &nbsp;
+                    </div>
+                </div>
+                <!-- Fin botones formulario -->
             </div>
             <!-- Fin Parte central - enlaces -->
         </div>

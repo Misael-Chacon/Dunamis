@@ -17,25 +17,54 @@
 
 <body style="background-color: rgb(0,50,50)">
 
-  <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-    <a class="navbar-brand" href="sesioniniciada.html"><img src="img/DigitalesDunamis.png" class="logo-dunamis"></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
-      aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-      <form id="formulario-login" class="form-inline my-2 my-lg-0 ml-auto">
-        <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand"  href="sesioniniciada.html"><img src="img/DigitalesDunamis.png" class="logo-dunamis"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+          aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+          <form id="formulario-login" class="form-inline my-2 my-lg-0 ml-auto">
+              <a href="sesioniniciada.html#proyectos"><button type="button" href="#proyectos" class="btn btn-outline-light">Proyectos</button></a>
+              <a href="sesioniniciada.html#mensajes"><button type="button" id="Mensajes" class="btn btn-outline-warning">Mensajes</button></a>
+              <a href="sesioniniciada.html#colecciones">   <button type="button" id="Colecciones" class="btn btn-outline-light">Colecciones</button></a>
+    
+            <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Crear
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">Nuevo Proyecto</a>
+                <a class="dropdown-item" href="#">Nuevo Mensaje</a>
+                <a class="dropdown-item" href="#">Nueva Colección</a>
+              </div>
+            </div>
+    
+            <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+              <div class="btn-group" role="group">
+                <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false">
+                  Usuario
+                </button>
+                <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                  <a href="perfil.html" class="dropdown-item" href="#">Perfil</a>
+                  <a class="dropdown-item" href="#">Apoyo</a>
+                  <a class="dropdown-item" href="#">Ajustes</a>
+                  <a href="index.html" class="dropdown-item">Cerrar Sesion</a>
+                </div>
+              </div>
+            </div>
+            <div id="fotousuario">
+                </div>
+                <div>
+                <div id="nameusuario" style="color:white">
+                </div>
+                </div>
+          </form>
         </div>
-        <div id="fotousuario">
-          </div>
-          <div>
-          <div id="nameusuario" style="color:white">
-          </div>
-          </div>
-      </form>
-    </div>
-  </nav>
+      </nav>
 
   <main role="main" class="container">
     <div class="container-fluid">

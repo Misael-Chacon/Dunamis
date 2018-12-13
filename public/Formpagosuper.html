@@ -71,29 +71,29 @@
                       </ul>
                    </div>
 
-                    <div class="col-md-8 order-md-1">
-                      <form class="needs-validation" novalidate>
-                     <hr class="mb-4">
-                         <h4 style="color: rgb(0, 0, 0);"class="mb-3">PAGO</h4>
-            
+                   <div class="col-md-8 order-md-1">
+                      <form action="/pago" method="GET" class="needs-validation" novalidate>
+                        <hr class="mb-4">
+                        <h4 style="color: rgb(0, 0, 0);" class="mb-3">PAGO</h4>
+              
                         <div class="d-block my-3">
                           <div class="custom-control custom-radio">
-                            <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked required>
+                            <input id="credit" name="paymentMethod" type="radio" value="Tarjeta de Credito" class="custom-control-input" checked required>
                             <label class="custom-control-label" for="credit">Tarjeta de Crédito</label>
                           </div>
                           <div class="custom-control custom-radio">
-                            <input id="debit" name="paymentMethod" type="radio" class="custom-control-input" required>
+                            <input id="debit" name="paymentMethod" type="radio" value="Tarjeta de Débito" class="custom-control-input" required>
                             <label class="custom-control-label" for="debit">Tarjeta de Débito</label>
                           </div>
                           <div class="custom-control custom-radio">
-                            <input id="paypal" name="paymentMethod" type="radio" class="custom-control-input" required>
+                            <input id="paypal" name="paymentMethod" type="radio" value="Pago por PayPal"class="custom-control-input" required>
                             <label class="custom-control-label" for="paypal">PayPal</label>
                           </div>
                         </div>
                         <div class="row">
                           <div class="col-md-6 mb-3">
                             <label for="cc-name">Nombre de la Tarjeta</label>
-                            <input type="text" class="form-control" id="cc-name" placeholder="" required>
+                            <input type="text" class="form-control" id="cc-name" name="nombretarjeta" placeholder="Ejemplo: Leo Misael Chacon Canales" required>
                             <small class="text-muted">Nombre completo como se muestra en la tarjeta</small>
                             <div class="invalid-feedback">
                               Nombre de la tarjeta de credito requerido
@@ -101,7 +101,7 @@
                           </div>
                           <div class="col-md-6 mb-3">
                             <label for="cc-number">Numero de tarjeta de crédito</label>
-                            <input type="text" class="form-control" id="cc-number" placeholder="" required>
+                            <input type="text" class="form-control" id="cc-number" name="numerotarjeta" placeholder="Ejemplo: 4214980023568745" required>
                             <div class="invalid-feedback">
                               Numero de la Tarjeta requerido
                             </div>
@@ -110,18 +110,22 @@
                         <div class="row">
                           <div class="col-md-3 mb-3">
                             <label for="cc-expiration">Vencimiento</label>
-                            <input type="text" class="form-control" id="cc-expiration" placeholder="" required>
+                            <input type="text" class="form-control" id="cc-expiration" name="vencimiento"placeholder="Ejemplo:5/21" required>
                             <div class="invalid-feedback">
                               Fecha de vencimiento requerido
                             </div>
                           </div>
                           <div class="col-md-3 mb-3">
                             <label for="cc-cvv">CVV</label>
-                            <input type="text" class="form-control" id="cc-cvv" placeholder="" required>
+                            <input type="text" class="form-control" id="cc-cvv" name="codigotarjeta"placeholder="Ejemplo: 4258" required>
                             <div class="invalid-feedback">
                               Codigo de seguridad requerido
                             </div>
                           </div>
+                          <div class="custom-control custom-radio">
+                              <input id="credit" name="codigoplan" type="radio" value="4" class="custom-control-input" checked required>
+                              <label class="custom-control-label" for="credit">ACEPTO HACER EL PAGO</label>
+                            </div>
                         </div>
                         <hr class="mb-4">
                         <button class="btn btn-primary btn-lg btn-block" type="submit">Continuar la comprobación</button>
@@ -142,11 +146,7 @@
                 <!-- Bootstrap core JavaScript
                 ================================================== -->
                 <!-- Placed at the end of the document so the pages load faster -->
-                <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-                <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
-                <script src="../../assets/js/vendor/popper.min.js"></script>
-                <script src="../../dist/js/bootstrap.min.js"></script>
-                <script src="../../assets/js/vendor/holder.min.js"></script>
+
                 <script>
                   // Example starter JavaScript for disabling form submissions if there are invalid fields
                   (function() {
@@ -169,9 +169,6 @@
                     }, false);
                   })();
                 </script>
-
-
-<br>
 
 <script src="js/jquery.min.js"></script>
 <script src="js/controlador.js"></script>
