@@ -32,10 +32,14 @@ $(document).ready(function () {
 			$("#urltwitter").append(`  <a href="https://www.twitter.com/${res[0].url_twitter}" target="blank">TWITTER</a> `);
 			$("#urllinkedin").append(`  <a href="https://www.linkedin.com/${res[0].url_linkedin}" target="blank">LINKEDIN</a> `);
 			$("#urlgithub").append(`  <a href="https://www.github.com/${res[0].url_github}" target="blank">GIT-HUB</a> `);
-			$("#txtName").append(` ${res[0].telefono}`);
-			$("#txtSurname").append(` ${res[0].fecha_nacimiento}`);
+			$("#txtelefono").append(`value="${res[0].telefono}"`);
+			$("#txtfecha").append(` value="${res[0].fecha_nacimiento}"`);
 			$("#txtdireccion").append(` ${res[0].direccion}`);
 			$("#txtBiography").append(` ${res[0].descripcion}`);
+			$("#txtFacebook").append(` value="${res[0].url_facebook}"`);
+			$("#txtTwitter").append(` value="${res[0].url_twitter}"`);
+			$("#txtLinkedin").append(` value="${res[0].url_linkedin}"`);
+			$("#txtPlus").append(` value="${res[0].url_github}"`);
 
 		},
 		error: function (error) {
@@ -45,7 +49,7 @@ $(document).ready(function () {
 });
 
 $("#btnupdate").click(function(){
-	var parametros = `txtName=${$("#txtName").val()}&txtSurname=${$("#txtSurname").val()}&txtdireccion=${$("#txtdireccion").val()}&txtBiography=${$("#txtBiography").val()}`;
+	var parametros = `txtelefono=${$("#txtelefono").val()}&txtfecha=${$("#txtfecha").val()}&txtdireccion=${$("#txtdireccion").val()}&txtBiography=${$("#txtBiography").val()}&txtFacebook=${$("#txtFacebook").val()}&txtTwitter=${$("#txtTwitter").val()}&txtLinkedin=${$("#txtLinkedin").val()}&txtPlus=${$("#txtPlus").val()}`;
      $.ajax({
         url:"/actualizar",
 		method:"GET",
