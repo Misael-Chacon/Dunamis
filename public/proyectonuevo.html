@@ -11,6 +11,7 @@
     <link rel="stylesheet" type="text/css" media="all" href="css/footer.css" />
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/registro.css">
+    <script src="js/controlproyectos.js"></script>
 </head>
 
 <body style="background-color: rgb(0,50,50)">
@@ -57,69 +58,42 @@
     <br>
 
 
-    <div class="container col-md-12 order-md-1 text-center" style="background-color: rgb(227, 231, 227)">
+    <div id="contenedornuevoproyecto"class="container col-md-4 order-md-2 text-center" style="background-color: rgb(227, 231, 227); margin-top: auto">
         <div class="py-5 ">
             <br>
             <h2 style="text-align: center">Crear Nuevo Proyecto<br></h2>
         </div>
-        <div class="row">
-            <div class="col-md-6 order-md-1 text-center">
-                <form action="/guardarregistro" method="GET" class="needs-validation" novalidate>
+            <div class="col-md-12 order-md-1 text-center">
+                <form action="/nombrenuevoproyecto" method="GET" class="needs-validation" novalidate>
                     <div class="mb-3">
-                        <label for="nombrecompleto">Nombre Completo</label>
-                        <input type="text" class="form-control" name="nombrecompleto" placeholder="Ejem. Juan Orlando Hernandez"
+                        <label for="nombredproyecto">NOMBRE DEL PROYECTO</label>
+                        <input type="text" class="form-control" name="nombredproyecto" placeholder="Ejem. Mi primer Proyecto"
                             required>
                         <div class="invalid-feedback">
-                            Se requiere que escriba su nombre completo
+                            Se requiere que escriba el nombre del proyecto
                         </div>
                     </div>
-                    <div class="mb-3">
-                        <label for="nombreusuario">Elige un nombre de usuario para Dunamis:</label>
-                        <input class="form-control" type="text" name="nombreusuario" placeholder="Ejem. JuanFogon"
-                            required>
-                        <div class="invalid-feedback">
-                            Nombre de usuario requerido
+                    <div class="control-group form-group">
+                            <div class="controls">
+                                <label for="descripcion" >DESCRIBA EN QUE CONSISTE SU PROYECTO:</label>
+                                <span id="alertBiography" data-toggle="popover" data-trigger="hover" data-placement="auto"
+                                    title="" data-content="">
+                                    <textarea rows="5" cols="30" class="form-control" name="descripcion" id="descripcionproyecto" required
+                                        maxlength="999" style="resize:none" data-validation-required-message="Por favor escriba un poco de lo que trata el proyecto."></textarea>
+                                        <div class="invalid-feedback">
+                                                Por favor escriba un poco de lo que trata el proyecto.
+                                        </div>
+                                    </span>
+                            </div>
                         </div>
-                    </div>
-                    <div class="mb-3">
-                        <label for="correo">Correo Electronico:</label>
-                        <input class="form-control" type="email" name="correo" name="" placeholder="Ejem. juanhernandez@gmail.com"
-                            required>
-                        <div class="invalid-feedback">
-                            correo electronico requerido
-                        </div>
-                    </div>
-                    <div class="mb-3">
-                        <label for="password">Escribe una contraseña:</label>
-                        <input class="form-control" type="password" name="password" placeholder="minimo 8 caracteres"
-                            required>
-                        <div class="invalid-feedback">
-                            Contraseña requerida
-                        </div>
-                    </div>
-                    <div class="mb-3">
-                        <label for="genero">Sexo:</label>
-                        <h6><label>Femenino<input type="radio" name="genero" value="Femenino"></label>
-                            <label>Masculino<input type="radio" name="genero" value="Masculino"></label><br></h6>
-                    </div>
-                    <div class="mb-3">
-                        <label for="pais">Seleccione su nacionalidad o Pais:</label>
-                        <select id="pais" name="pais" class="form-control">
-                            <option value="0" placeholder="Seleccione un pais"></option>
-                        </select>
-                        <div class="invalid-feedback">
-                            Seleccione su pais de origen
-                        </div>
-                    </div>
+
                     <hr class="mb-3">
-                    <button class="btn btn-primary btn-lg btn-block" type="submit">Registrarse</button>
+                    <button class="btn btn-primary btn-lg btn-block" type="submit">Guardar</button>
                     <br>
-                    <h6>Al registrarse usted acepta los terminos de servicio, el codigo de
-                        conducta y la politica de privacidad de Dunamis. </h6>
+                    <h6>Asugúrese de haber escrito bien el nombre del proyecto para que lo pueda abrir siempre que necesite modificar </h6>
+                    <br> 
                 </form>
             </div>
-        </div>
-
     </div>
     <br>
 
@@ -176,7 +150,6 @@
     </script>
 
     <script src="js/jquery.min.js"></script>
-    <script src="js/funcionalidad.js"></script>
     <script src="js/controlador.js"></script>
     <script src="js/bootstrap.min.js"></script>
 

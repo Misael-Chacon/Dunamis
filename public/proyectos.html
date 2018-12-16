@@ -1,60 +1,111 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Proyecto de desarrollo Web">
-    <meta name="author" content="Leo Misael Chacon">
-    <link rel="shortcut icon" href="img/LogoDunamis.png">
-    <title>Dunamis</title>
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" media="all" href="css/footer.css" />
-    <link href="css/main.css" rel="stylesheet">
-  </head>
 
-  <body style= "background-color: rgb(0,50,50)">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Proyecto de desarrollo Web">
+  <meta name="author" content="Leo Misael Chacon">
+  <link rel="shortcut icon" href="img/LogoDunamis.png">
+  <title>Dunamis</title>
+  <link rel="stylesheet" type="text/css" media="all" href="css/footer.css" />
+  <link href="css/main.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+</head>
 
+
+<body style="background-color: rgb(0,50,50)">
+  <div>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-        <a class="navbar-brand" href="index.html"><img src="img/DigitalesDunamis.png" class="logo-dunamis"></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-    
-          <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-          <form id="formulario-login" class="form-inline my-2 my-lg-0 ml-auto">
-               <button type="button" id = "boton" class="btn btn-outline-light">Guardar</button> 
-               <button type="button" id = "boton" class="btn btn-outline-warning">Ajustes</button> 
-               <button type="button" id = "boton"  class="btn btn-outline-light" >Cambio de Vista</button> 
-            </form>
-        </div>
-      </nav>
+      <a class="navbar-brand" href="sesioniniciada.html"><img src="img/DigitalesDunamis.png" class="logo-dunamis"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+        aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div id="tituloproyecto" style="color: white; font:italic ; font-size: 20px;"></div>
 
-       <div class="container-fluid">
-            <div class="row">
-              <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4"  style="background-color:#aaa" style="height: 384.594px;">
-                <h1>HTML</h1> 
-                <p>Esto es una prueba de bootstrap.</p>
-              </div>
-              <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4"  style="background-color:#bbb"style="height: 384.594px;">
-                <h1>CSS</h1> 
-                <p>Esto es una prueba de bootstrap.</p>
-              </div>
-              <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4"  style="background-color:#ccc"style="height: 384.594px;">
-                <h1>JAVASCRIPT</h1> 
-                <p>Esto es una prueba de bootstrap.</p>
-              </div>
-            </div>
-          </div> 
-           
-          <div class="container-fluid">
-                <div class="row">
-                  <div class="col-lg-12" class="pantalla" style="background-color:#ccc">
-                    <h1>PANTALLA</h1> 
-                  </div>
-                </div>
-              </div> 
-    <script src="js/funcionalida.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-  </body>
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <form id="formulario-login" class="form-inline my-2 my-lg-0 ml-auto">
+          <button type="button" id="guardaproyecto" class="btn btn-outline-light">Guardar</button>
+          <a href="abrirproyecto.html"><button type="button" id="abrirproyecto" class="btn btn-outline-warning">Abrir</button></a>
+          <a href="sesioniniciada.html"><button type="button" id="" class="btn btn-outline-light">Cerrar</button></a>
+        </form>
+      </div>
+      <div id="fotousuario">
+      </div>
+      <div>
+        <div id="nameusuario" style="color:white">
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12" style="background-color: rgb(0,50,50); color: white; margin-top: 5px; height: 400px; width: 455px; text-align: center;">
+        <h4>HTML</h4>
+        <div id="editor" style="height: 350px; width: 420px; padding: 1rem; box-sizing: border-box; margin-left: auto; margin-top: auto">
+       </div>
+      </div>
+      <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12" style="background-color: rgb(0,50,50); color: white; margin-top: 5px; height: 400px; width: 455px; text-align: center;">
+        <h4>CSS</h4>
+        <div id="editorr" style="height: 350px; width: 420px; padding: 1rem; box-sizing: border-box; margin-left: auto; margin-top: auto">
+         </div>
+      </div>
+      <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12" style="background-color: rgb(0,50,50); color: white; margin-top: 5px; height: 400px; width: 455px; text-align: center;">
+        <h4>JAVASCRIPT</h4>
+        <div id="editora" style="height: 350px; width: 420px; padding: 1rem; box-sizing: border-box; margin-left: auto; margin-top: auto">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-12" class="pantalla" style="background-color:#ccc; text-align: center; color: white">
+        <h4>RESULTADO EN PANTALLA</h4>
+        <div id="resultado" style="margin-top: 30px; text-align: center; margin-bottom:auto; margin-top: auto;">
+          <iframe id="" src="" width="100%" height="600px" allowfullscreen="true" sandbox="allow-forms allow-modals allow-pointer-lock allow-popups allow-same-origin allow-scripts"
+            allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor"
+            allowtransparency="true" allowpaymentrequest="true" class="result-iframe"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer editor-footer">
+    <div class="footer-copy" style="background-color:black ;text-align: center; color: white">
+      <p class="footer-text">
+        Copyright &copy;<script>
+          document.write(new Date().getFullYear());
+        </script> Todos los derechos reservados | Dunamis Digitales</a>
+      </p>
+    </div>
+  </footer>
+
+  <script src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <script src="ace-builds/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/controlador.js"></script>
+  <script>
+    var editor = ace.edit("editor");
+    editor.setTheme("ace/theme/monokai");
+    editor.session.setMode("ace/mode/html");
+    document.getElementById('editor').style.fontSize = '12px';
+
+    var editorr = ace.edit("editorr");
+    editorr.setTheme("ace/theme/monokai");
+    editorr.session.setMode("ace/mode/css");
+    document.getElementById('editorr').style.fontSize = '12px';
+
+    var editora = ace.edit("editora");
+    editora.setTheme("ace/theme/monokai");
+    editora.session.setMode("ace/mode/javascript");
+    document.getElementById('editora').style.fontSize = '12px';
+  </script>
+   <script src="js/controlguardar.js"></script>
+   <script src="js/archivosabrir.js"></script>
+
+</body>
+
 </html>
