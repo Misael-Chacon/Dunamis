@@ -13,6 +13,10 @@
       height: 60px;
       right: 20px;
   }
+  .avisologo-dunamis{
+    width: 200px;
+    height: 85px;
+}
 .captura{
     text-align: center;
     display:flex; 

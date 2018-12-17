@@ -3,7 +3,10 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+.logo-dunamisfooter{
+    width: 270px;
+    height: 120px;
+}
 .info-container{
     width: 100%;
     background: #f2f2f2;
