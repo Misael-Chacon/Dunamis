@@ -60,27 +60,27 @@
     <div id="contenedornuevoproyecto"class="container col-md-4 order-md-2 text-center" style="background-color: rgb(227, 231, 227); margin-top: auto">
         <div class="py-5 ">
             <br>
-            <h2 style="text-align: center">Crear Nuevo Proyecto<br></h2>
+            <h2 style="text-align: center">Crear Nuevo Mensaje<br></h2>
         </div>
             <div class="col-md-12 order-md-1 text-center">
-                <form action="/nombrenuevoproyecto" method="GET" class="needs-validation" novalidate>
+                <form action="/mensaje" method="GET" class="needs-validation" novalidate>
                     <div class="mb-3">
-                        <label for="nombredproyecto">NOMBRE DEL PROYECTO</label>
-                        <input type="text" class="form-control" name="nombredproyecto" placeholder="Ejem. Mi primer Proyecto"
+                        <label for="nombredproyecto">Titulo del Mensaje</label>
+                        <input type="text" class="form-control" name="nombredproyecto" placeholder="Ejem. Me Gusta Dunamis Digitales "
                             required>
                         <div class="invalid-feedback">
-                            Se requiere que escriba el nombre del proyecto
+                            Se requiere que escriba el Titulo del Mensaje
                         </div>
                     </div>
                     <div class="control-group form-group">
                             <div class="controls">
-                                <label for="descripcion" >DESCRIBA EN QUE CONSISTE SU PROYECTO:</label>
+                                <label for="descripcion" >Escriba su mensaje</label>
                                 <span id="alertBiography" data-toggle="popover" data-trigger="hover" data-placement="auto"
                                     title="" data-content="">
-                                    <textarea rows="5" cols="30" class="form-control" name="descripcion" id="descripcionproyecto" required
+                                    <textarea rows="10" cols="30" class="form-control" name="descripcion" id="descripcionproyecto" required
                                         maxlength="999" style="resize:none" data-validation-required-message="Por favor escriba un poco de lo que trata el proyecto."></textarea>
                                         <div class="invalid-feedback">
-                                                Por favor escriba un poco de lo que trata el proyecto.
+                                                Por favor escriba un poco de lo que trata su mensaje.
                                         </div>
                                     </span>
                             </div>
@@ -89,7 +89,7 @@
                     <hr class="mb-3">
                     <button class="btn btn-primary btn-lg btn-block" type="submit">Guardar</button>
                     <br>
-                    <h6>Asugúrese de haber escrito bien el nombre del proyecto para que lo pueda abrir siempre que necesite modificar </h6>
+                    <h6>Asugúrese de haber escrito algo en el Titulo y en el mensaje. </h6>
                     <br> 
                 </form>
             </div>
