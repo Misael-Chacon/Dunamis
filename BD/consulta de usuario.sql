@@ -19,9 +19,6 @@ select a.codigo_usuario, a.nombre_completo, a.correo, a.contrasenia, a.username,
         on(a.codigo_usuario = l.codigo_usuario)
         
         
-update tbl_usuarios 
-set telefono=[99062425],
-descripcion=[Soy la mejor mamá del mundo],
-direccion=[colonia villanueva sector 7a frente a la terminal de buses carretera a Danli],
-fecha_nacimiento=[12/04/1984]
-WHERE codigo_usuario = 2
+SELECT a.codigo_usuario, a.correo, a.codigo_tipo_usuario 
+FROM tbl_usuarios a
+WHERE contrasenia = 08011981 and correo=?"
