@@ -15,56 +15,58 @@
 
 <body style="background-color: rgb(0,50,50)">
 
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-        <a class="navbar-brand" href="sesioniniciada.html"><img src="img/DigitalesDunamis.png" class="logo-dunamis"></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
-            aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-            <form id="formulario-login" class="form-inline my-2 my-lg-0 ml-auto">
-                <button type="button" id="boton" class="btn btn-outline-light">Proyectos</button>
-                <button type="button" id="boton" class="btn btn-outline-warning">Mensajes</button>
-                <button type="button" id="boton" class="btn btn-outline-light">Colecciones</button>
-
-                <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">
-                        Crear
+        <div>
+                <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+                    <a class="navbar-brand" href="sesioniniciada.html"><img src="img/DigitalesDunamis.png" class="logo-dunamis"></a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+                        aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
                     </button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="#">Nuevo Proyecto</a>
-                        <a class="dropdown-item" href="#">Nuevo Mensaje</a>
-                        <a class="dropdown-item" href="#">Nueva Colección</a>
+        
+                    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+                        <form id="formulario-login" class="form-inline my-2 my-lg-0 ml-auto">
+                            <a href="#proyectos"><button type="button" class="btn btn-outline-light">Proyectos</button></a>
+                            <a href="#mensajes"><button type="button" id="Mensajes" class="btn btn-outline-warning">Mensajes</button></a>
+                            <a href="#colecciones"><button type="button" id="Colecciones" class="btn btn-outline-light">Colecciones</button></a>
+        
+                            <div class="dropdown">
+                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Crear
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <a class="dropdown-item" id="" href="/proyectonuevo.html">Nuevo Proyecto</a>
+                                    <a class="dropdown-item" id="" href="/abrirproyecto.html">Abrir Proyecto</a>
+                                    <a class="dropdown-item" id="nuevomensaje" href="/NuevoMensaje.html">Nuevo Mensaje</a>
+                                </div>
+                            </div>
+        
+                            <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+                                <a href="planes.html" class="dropdown-item"><button type="button" class="btn btn-danger">Elegir
+                                        un
+                                        Plan</button></a>
+                                <div class="btn-group" role="group">
+                                    <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Usuario
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                                        <a href="perfil.html" class="dropdown-item">Perfil</a>
+                                        <a class="dropdown-item" href="apoyo/MANUAL-DE-AYUDA.pdf" target="blank">Apoyo</a>
+                                        <a href="/cerrar-sesion" class="dropdown-item">Cerrar Sesion</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="fotousuario">
+                            </div>
+                            <div>
+                                <div id="nameusuario" style="color:white">
+                                </div>
+                            </div>
+                        </form>
                     </div>
-                </div>
-
-                <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
-                    <a href="planes.html" class="dropdown-item"><button type="button" class="btn btn-danger">Elegir un
-                            Plan</button></a>
-                    <div class="btn-group" role="group">
-                        <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">
-                            Usuario
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                            <a href="perfil.html" class="dropdown-item">Perfil</a>
-                            <a class="dropdown-item" href="#">Apoyo</a>
-                            <a class="dropdown-item" href="#">Ajustes</a>
-                            <a href="index.html" class="dropdown-item">Cerrar Sesion</a>
-                        </div>
-                    </div>
-                </div>
-                <div id="fotousuario">
-                    <img id="avatar" src="img/avatar.jpg" style="width: 50px; height: 50px">
-                </div>
-                <div id="nombreusuario">
-                    <h5>Me llamo: Avatar Avatarado</h5>
-                </div>
-            </form>
-        </div>
-    </nav>
+                </nav>
+            </div>
 
     <main role="main" class="container">
         <div class="container-fluid">
@@ -89,60 +91,78 @@
     </main>
 
     <div>
-        <footer>
-            <div class="footer-container">
-                <div class="footer-main">
-                    <div class="footer-columna">
-                        <h3>Registrate</h3>
-                        <input type="email" placeholder="Escriba su Correo o Teléfono">
-                        <input type="submit" value="Suscribirse">
-                    </div>
-                    <div class="footer-columna">
-                        <h3>Dirección</h3>
-                        <span class="fa fa-map-marker">
-                            <p>Colonia Villanueva Sector 7A Tegucigalpa Honduras</p>
-                        </span>
-                        <span class="fa fa-phone">
-                            <p>(+504 9906-2425)</p>
-                        </span>
-                        <span class="fa fa-envelope">
-                            <p>misaelchacon17@yahoo.es</p>
-                        </span>
-                    </div>
-                    <div class="footer-columna">
-                        <h3>Sobre Nosotros</h3>
-                        <p>Somos una empresa para desarrolladores totalmente diferente, facil de usar y de rapido
-                            acceso</p>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-copy-redes">
-                <div class="main-copy-redes">
-                    <div class="footer-copy">
-                        <p class="footer-text">
-                            Copyright &copy;<script>
-                                document.write(new Date().getFullYear());
-                            </script> Todos los derechos reservados | Dunamis Digitales</a>
-                        </p>
-                    </div>
-                    <div class="footer-redes">
-                        <a href="#" img src="img/logoFacebook.png" alt="Facebook" class="fa fa-facebook"></a>
-                        <a href="#" img src="img/logoTwiter.png" alt="Twiter" class="fa fa-twitter"></a>
-                        <a href="#" img src="img/logogithub.png" alt="Github" class="fa fa-github"></a>
+            <footer>
+                <div class="footer-container">
+                    <div class="footer-main">
+                        <div class="footer-columna">
+                            <h3>Dunamis Digitales</h3>
+                            <img src="img/DigitalesDunamis.jpg" class="logo-dunamisfooter">
+                        </div>
+                        <div class="footer-columna">
+                            <h3>Dirección</h3>
+                            <span class="fa fa-map-marker">
+                                <p>Colonia Villanueva Sector 7A Tegucigalpa Honduras</p>
+                            </span>
+                            <span class="fa fa-phone">
+                                <p>(+504 9906-2425)</p>
+                            </span>
+                            <span class="fa fa-envelope">
+                                <p>misaelchacon17@yahoo.es</p>
+                            </span>
+                        </div>
+                        <div class="footer-columna">
+                            <h3>Sobre Nosotros</h3>
+                            <p>Somos una empresa para desarrolladores totalmente diferente, facil de usar y de rapido
+                                acceso</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </footer>
+                <div class="footer-copy-redes">
+                    <div class="main-copy-redes">
+                        <div class="footer-copy">
+                            <p class="footer-text">
+                                Copyright &copy;<script>
+                                    document.write(new Date().getFullYear());
+                                </script> Todos los derechos reservados | Dunamis Digitales</a>
+                            </p>
+                        </div>
+                        <div class="footer-redes">
+                            <div class="container">
+                                <ul class="list-inline list-social">
+                                    <li class="list-inline-item social-twitter">
+                                        <a href="http://www.twitter.com">
+                                            <i class="fab fa-twitter"></i>
+                                        </a>
+                                    </li>
+                                    <li class="list-inline-item social-facebook">
+                                        <a href="http://www.facebook.com">
+                                            <i class="fab fa-facebook-f"></i>
+                                        </a>
+                                    </li>
+                                    <li class="list-inline-item social-google-plus">
+                                        <a href="http://www.googleplus.com">
+                                            <i class="fab fa-google-plus-g"></i>
+                                        </a>
+                                    </li>
+                                    <li class="list-inline-item social-linkedin">
+                                        <a href="http://www.linkedin.com">
+                                            <i class="fab fa-linkedin"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+
     </div>
 
 
-    </div>
-
-
+    <script src="js/jquery.min.js"></script>
     <script src="js/controlador.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
 </body>
 
 </html>
