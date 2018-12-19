@@ -18,17 +18,17 @@ var publicUsuario = express.static("public-usuario");
 var codigoUsuario = null;
 var correoUsuario = null;
 var codigoTipoUsuario = null;
+var CodigoProyecto = null;
 //Exponer una carpeta como publica, unicamente para archivos estaticos: .html, imagenes, .css, .js
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({
-    extended: true
-}));
+app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 app.use(session({
     secret: "ASDFE$%#%",
     resave: true,
     saveUninitialized: true
 }));
+
 app.use(
     function (req, res, next) {
         if (req.session.correoUsuario) {
@@ -48,6 +48,7 @@ app.use(
     }
 );
 //RUTAS
+//Para llenar los Paices en el formulario de registrogratis
 app.get("/paices", function (req, res) {
     var conexion = mysql.createConnection(credenciales);
     conexion.query("SELECT codigo_pais, nombre_pais FROM tbl_paises",
@@ -56,14 +57,9 @@ app.get("/paices", function (req, res) {
             if (error)
                 res.send(error);
             else {
-                for (var i = 0; i < res.length; i++) {
-                    $("#pais").append(
-                        `<option value="${data[i].codigo_pais}">${data[i].nombre_pais}</option>`
-                    );
-                }
+                res.send(data);
+                res.end();
             }
-            res.send(data);
-            res.end();
         }
     );
 });
@@ -76,7 +72,7 @@ function verificarAutenticacion(req, res, next) {
         res.send("ERROR, ACCESO NO AUTORIZADO");
 }
 
-
+//Ruta para Logearse formulario login y login error
 app.post("/login", function (req, res) {
     var conexion = mysql.createConnection(credenciales);
     conexion.query(
@@ -99,10 +95,9 @@ app.post("/login", function (req, res) {
                 res.send(data);
                 res.end();
             }
-        }
-    )
+        })
 });
-
+//Ruta para llenar el perfil y perfil actualizado 
 app.get("/usuarios", function (req, res) {
     var conexion = mysql.createConnection(credenciales);
     conexion.query(`select a.nombre_completo, a.correo, a.username, 
@@ -137,7 +132,7 @@ app.get("/usuarios", function (req, res) {
         }
     )
 });
-/*
+
 app.get("/obtener-session", function (req, res) {
     res.send("Codigo Usuario: " + req.session.codigoUsuario +
         ", Correo: " + req.session.correoUsuario +
@@ -148,7 +143,7 @@ app.get("/obtener-session", function (req, res) {
 
 app.get("/cerrar-sesion", function (req, res) {
     req.session.destroy();
-    res.send("Sesion eliminada");
+    res.redirect('/index.html');
     res.end();
 });
 
@@ -156,7 +151,8 @@ app.get("/contenido-registringido", verificarAutenticacion, function (req, res) 
     res.send("Este es un contenido restringido");
     res.end();
 });
-*/
+
+//Ruta para guardar el registro de un Nuevo Usuario en registro gratis
 app.get("/guardarregistro", function (req, res) {
     var conexion = mysql.createConnection(credenciales);
     conexion.query("INSERT INTO tbl_usuarios(nombre_completo, correo, username, contrasenia, genero, codigo_pais, codigo_plan, codigo_tipo_usuario) VALUES (?,?,?,?,?,?,1,2)",
@@ -178,6 +174,275 @@ app.get("/guardarregistro", function (req, res) {
         });
 });
 
+//Ruta para guardar el registro de un Nuevo Usuario en registro gratis
+app.post("/mensaje", function (req, res) {
+    var conexion = mysql.createConnection(credenciales);
+    conexion.query("INSERT INTO tbl_mensajes(titulo, descripcion, codigo_usuario) VALUES (?,?,?)",
+        [req.body.nombredmensaje,
+         req.body.mensaje,
+         codigoUsuario,
+        ],
+        function (error, data, fields) {
+            if (error) {
+                res.send(error);
+                res.end();
+            } else {
+                res.redirect('/sesioniniciada.html');
+                res.end();
+            }
+        });
+});
+
+app.post("/mensajes", function (req, res) {
+    var conexion = mysql.createConnection(credenciales);
+    conexion.query("SELECT a.titulo, a.descripcion, b.username, b.foto from tbl_mensajes a inner join tbl_usuarios b on(a.codigo_usuario = b.codigo_usuario) ORDER BY (a.codigo_mensaje) DESC",
+        [],
+        function (error, data, fields) {
+            if (error) {
+                res.send(error);
+                res.end();
+            } else {
+                res.send(data);
+                res.end();
+            }
+        });
+});
+
+//Ruta para confirmar cantidad de proyectos que tienen derecho los usuarios formularios que tienen boton crear
+app.get("/Proyects", function (req, res) {
+    var conexion = mysql.createConnection(credenciales);
+    conexion.query("SELECT codigo_plan from tbl_usuarios WHERE codigo_usuario = ?",
+        [codigoUsuario],
+        function (error, data, fields) {
+            if (error) {
+                res.send(error);
+                res.end();
+            } else {
+                req.session.codigo_plan = data[0].codigo_plan;
+                var conexion = mysql.createConnection(credenciales);
+                conexion.query("select count(codigo_proyecto) as proyectos, (codigo_usuario) as plan from tbl_proyectos where codigo_usuario = ?",
+                    [codigoUsuario],
+                    function (error, data, fields) {
+                        if (error) {
+                            res.send(error);
+                            res.end();
+                        } else {
+                            console.log(res);
+                            data[0].plan = req.session.codigo_plan;
+                            res.send(data);
+                            res.end();
+                        }
+                    });
+            }
+        });
+});
+
+//RUTA DIRECTA PARA SABER LOS PLANES y bloquear usuarios si exceden los planes
+app.get("/Proyectoos", function (req, res) {
+    var conexion = mysql.createConnection(credenciales);
+    conexion.query("SELECT codigo_plan from tbl_usuarios WHERE codigo_usuario = ?",
+        [codigoUsuario],
+        function (error, data, fields) {
+            if (error) {
+                res.send(error);
+                res.end();
+            } else {
+                req.session.codigo_plan = data[0].codigo_plan;
+                var conexion = mysql.createConnection(credenciales);
+                conexion.query("select count(codigo_proyecto) as proyectos from tbl_proyectos where codigo_usuario = ?",
+                    [codigoUsuario],
+                    function (error, data, fields) {
+                        if (error) {
+                            res.send(error);
+                            res.end();
+                        } else {
+                            console.log(res);
+                            req.session.proyectos = data[0].proyectos;
+                            if (req.session.codigo_plan == 1) {
+                                if (req.session.proyectos == 1) {
+                                    res.redirect('/aviso.html');
+                                    res.end();
+                                }
+                                res.redirect('/proyectos.html');
+                                res.end();
+
+                            } else {
+                                if (req.session.codigo_plan == 2) {
+                                    if (req.session.proyectos < 11) {
+                                        res.redirect('/proyectos.html');
+                                        res.end();
+                                    }
+                                    res.redirect('/aviso.html');
+                                    res.end();
+
+                                } else {
+                                    if (req.session.codigo_plan == 3) {
+                                        if (req.session.proyectos < 26) {
+                                            res.redirect('/proyectos.html');
+                                            res.end();
+                                        }
+                                        res.redirect('/aviso.html');
+                                        res.end();
+                                    } else {
+                                        if (req.session.codigo_plan == 4) {
+                                            if (req.session.proyectos < 51) {
+                                                res.redirect('/proyectos.html');
+                                                res.end();
+                                            }
+                                            res.redirect('/aviso.html');
+                                            res.end();
+                                        }
+                                        res.send(data);
+                                        res.end();
+                                    }
+                                }
+                            }
+
+                        }
+                    });
+            }
+        });
+});
+//RUTA PARA SELECCIONAR EL PROYECTO QUE DESEA ABRIR DORMULARIO ABRIRPROYECTO
+app.get("/abrirproyect", function (req, res) {
+    var conexion = mysql.createConnection(credenciales);
+    conexion.query("SELECT codigo_proyecto, nombre_proyecto, descripcion FROM tbl_proyectos WHERE codigo_usuario = ?",
+        [codigoUsuario],
+        function (error, data, fields) {
+            if (error) {
+                res.send(error);
+                res.end();
+            } else {
+                res.send(data);
+                res.end();
+            }
+        }
+    );
+});
+
+app.get("/Abierto/:codigo_proyecto", function (req, res) {
+    CodigoProyecto = req.params.codigo_proyecto;
+    var conexion = mysql.createConnection(credenciales);
+    conexion.query("SELECT nombre_archivo_html FROM tbl_archivo_html WHERE codigo_proyecto = ?",
+        [CodigoProyecto],
+        function (error, data, fields) {
+            if (error) {
+                res.send(error);
+                res.end();
+            } else {
+                conexion.query("SELECT nombre_archivo_css FROM tbl_archivo_css WHERE codigo_proyecto = ?",
+                    [CodigoProyecto],
+                    function (error, data, fields) {
+                        if (error) {
+                            res.send(error);
+                            res.end();
+                        } else {
+                            conexion.query("SELECT nombre_archivo_js FROM tbl_archivo_js WHERE codigo_proyecto = ?",
+                                [CodigoProyecto],
+                                function (error, data, fields) {
+                                    if (error) {
+                                        res.send(error);
+                                        res.end();
+                                    } else {
+                                        res.redirect('/proyectosAbierto.html');
+                                        res.send(data);
+                                        res.end();
+                                    }
+                                }
+                            );
+                        }
+                    }
+                );
+            }
+        }
+    );
+});
+
+app.get("/titulo", function (req, res) {
+    var conexion = mysql.createConnection(credenciales);
+    conexion.query("SELECT nombre_proyecto FROM tbl_proyectos WHERE codigo_usuario = ? and codigo_proyecto = ?",
+        [codigoUsuario, CodigoProyecto],
+        function (error, data, fields) {
+            if (error) {
+                res.send(error);
+                res.end();
+            } else {
+                res.send(data);
+                res.end();
+            }
+        }
+    );
+});
+
+//Ruta para crear un nuevo proyecto Por el usuario
+app.get("/nombrenuevoproyecto", function (req, res) {
+    var conexion = mysql.createConnection(credenciales);
+    conexion.query("INSERT INTO tbl_proyectos(nombre_proyecto, descripcion, codigo_usuario) VALUES (?,?,?)",
+        [req.query.nombredproyecto,
+            req.query.descripcion,
+            codigoUsuario,
+        ],
+        function (error, data, fields) {
+            if (error) {
+                res.send(error);
+                res.end();
+            } else {
+                conexion.query("SELECT codigo_proyecto from tbl_proyectos WHERE nombre_proyecto = ?",
+                    [req.query.nombredproyecto, ],
+                    function (error, data, fields) {
+                        if (error) {
+                            res.send(error);
+                            res.end();
+                        } else {
+                            req.session.codigo_proyecto = data[0].codigo_proyecto;
+                            CodigoProyecto = req.session.codigo_proyecto;
+                            conexion.query("INSERT INTO tbl_usuarios_x_tbl_proyectos(codigo_usuario, codigo_proyecto) VALUES (?,?)",
+                                [codigoUsuario,
+                                    req.session.codigo_proyecto,
+                                ],
+                                function (error, data, fields) {
+                                    if (error) {
+                                        res.send(error);
+                                        res.end();
+                                    } else {
+                                        conexion.query("INSERT INTO tbl_archivo_html(codigo_proyecto) VALUES (?)",
+                                            [req.session.codigo_proyecto, ],
+                                            function (error, data, fields) {
+                                                if (error) {
+                                                    res.send(error);
+                                                    res.end();
+                                                } else {
+                                                    conexion.query("INSERT INTO tbl_archivo_css(codigo_proyecto) VALUES (?)",
+                                                        [req.session.codigo_proyecto, ],
+                                                        function (error, data, fields) {
+                                                            if (error) {
+                                                                res.send(error);
+                                                                res.end();
+                                                            } else {
+                                                                conexion.query("INSERT INTO tbl_archivo_js(codigo_proyecto) VALUES (?)",
+                                                                    [req.session.codigo_proyecto, ],
+                                                                    function (error, data, fields) {
+                                                                        if (error) {
+                                                                            res.send(error);
+                                                                            res.end();
+                                                                        } else {
+                                                                            res.redirect('/proyectos.html');
+                                                                            res.end();
+                                                                        }
+                                                                    });
+                                                            }
+                                                        });
+                                                }
+                                            });
+                                    }
+                                });
+
+                        }
+                    });
+            }
+        });
+});
+//Ruta para comprar y ser usuario Premium formularios formpagoarranque, formpagodesarrollador, formpagosuper
 app.get("/pago", function (req, res) {
     var conexion = mysql.createConnection(credenciales);
     conexion.query("INSERT INTO tbl_creditos(nombre_tarjeta, numero_tarjeta, vencimiento, codigo_seguridad, tipo_pago, codigo_plan) VALUES (?,?,?,?,?,?)",
@@ -209,7 +474,7 @@ app.get("/pago", function (req, res) {
             }
         });
 });
-
+//Ruta para actualizar los datos del Perfil en formulario perfilactualizado
 app.get("/actualizar", function (req, res) {
     var query = "UPDATE `tbl_usuarios`SET";
     query += "`telefono`='" + req.query.txtelefono + "',";
@@ -273,9 +538,47 @@ app.get("/actualizar", function (req, res) {
     });
 });
 
+//RUTA PARA GUARDAR LOS ARCHIVOS DEL PROYECTO EN HTML, CSS Y JAVASCRIPT
+app.get("/guardahtmlcssjavascript", function (req, res) {
+    var query = "UPDATE `tbl_archivo_html`SET";
+    query += "`nombre_archivo_html`='" + req.query.ditor + "'";
+    query += "WHERE `tbl_archivo_html`.`codigo_proyecto` = " + CodigoProyecto + "";
+    var conexion = mysql.createConnection(credenciales);
+    conexion.query(query, function (error, data, fields) {
+        if (error) {
+            res.send(error);
+            res.end();
+        } else {
+            var query = "UPDATE `tbl_archivo_css`SET";
+            query += "`nombre_archivo_css`='" + req.query.ditorr + "'";
+            query += "WHERE `tbl_archivo_css`.`codigo_proyecto` = " + CodigoProyecto + "";
+            var conexion = mysql.createConnection(credenciales);
+            conexion.query(query, function (error, data, fields) {
+                if (error) {
+                    res.send(error);
+                    res.end();
+                } else {
+                    var query = "UPDATE `tbl_archivo_js`SET";
+                    query += "`nombre_archivo_js`='" + req.query.ditora + "'";
+                    query += "WHERE `tbl_archivo_js`.`codigo_proyecto` = " + CodigoProyecto + "";
+                    var conexion = mysql.createConnection(credenciales);
+                    conexion.query(query, function (error, data, fields) {
+                        if (error) {
+                            res.send(error);
+                            res.end();
+                        } else {
+                            res.send(data);
+                            res.end();
+                        }
+                    });
+                }
+            });
+        }
+    });
+});
+
 //Crear y levantar el servidor web.
 app.set('port', process.env.PORT || 8111);
 app.listen(app.get('port'), () => {
     console.log(`SERVIDOR INICIADO EN EL PUERTO ${app.get('port')}`);
 });
-//var io = require('socket.io').listen(server);
