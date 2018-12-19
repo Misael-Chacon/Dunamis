@@ -14,58 +14,58 @@
 </head>
 
 <body style="background-color: rgb(0,50,50)">
-<div>
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-        <a class="navbar-brand" href="sesioniniciada.html"><img src="img/DigitalesDunamis.png" class="logo-dunamis"></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
-            aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+    <div>
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+            <a class="navbar-brand" href="sesioniniciada.html"><img src="img/DigitalesDunamis.png" class="logo-dunamis"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+                aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-            <form id="formulario-login" class="form-inline my-2 my-lg-0 ml-auto">
-             <a href="#proyectos"><button type="button" href="#proyectos" class="btn btn-outline-light">Proyectos</button></a>
-             <a href="#mensajes"><button type="button" id="Mensajes" class="btn btn-outline-warning">Mensajes</button></a>
-             <a href="#colecciones">   <button type="button" id="Colecciones" class="btn btn-outline-light">Colecciones</button></a>
+            <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+                <form id="formulario-login" class="form-inline my-2 my-lg-0 ml-auto">
+                    <a href="#proyectos"><button type="button" class="btn btn-outline-light">Proyectos</button></a>
+                    <a href="#mensajes"><button type="button" id="Mensajes" class="btn btn-outline-warning">Mensajes</button></a>
+                    <a href="#colecciones"><button type="button" id="Colecciones" class="btn btn-outline-light">Colecciones</button></a>
 
-                <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">
-                        Crear
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" id="nuevoproyecto" href="proyectonuevo.html">Nuevo Proyecto</a>
-                        <a class="dropdown-item" id="nuevomensaje" href="#">Nuevo Mensaje</a>
-                        <a class="dropdown-item" id="nuevacoleccion"href="#">Nueva Colección</a>
-                    </div>
-                </div>
-
-                <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
-                    <a href="planes.html" class="dropdown-item"><button type="button" class="btn btn-danger">Elegir un
-                            Plan</button></a>
-                    <div class="btn-group" role="group">
-                        <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">
-                            Usuario
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Crear
                         </button>
-                        <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                            <a href="perfil.html" class="dropdown-item">Perfil</a>
-                            <a class="dropdown-item" href="#">Apoyo</a>
-                            <a class="dropdown-item" href="#">Ajustes</a>
-                            <a href="index.html" class="dropdown-item">Cerrar Sesion</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" id="" href="/proyectonuevo.html">Nuevo Proyecto</a>
+                            <a class="dropdown-item" id="" href="/abrirproyecto.html">Abrir Proyecto</a>
+                            <a class="dropdown-item" id="nuevomensaje" href="/NuevoMensaje.html">Nuevo Mensaje</a>
                         </div>
                     </div>
-                </div>
-                <div id="fotousuario">
-                </div>
-                <div>
-                <div id="nameusuario" style="color:white">
-                </div>
-                </div>
-            </form>
-        </div>
-    </nav>
-</div>
+
+                    <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+                        <a href="planes.html" class="dropdown-item"><button type="button" class="btn btn-danger">Elegir
+                                un
+                                Plan</button></a>
+                        <div class="btn-group" role="group">
+                            <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Usuario
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                                <a href="perfil.html" class="dropdown-item">Perfil</a>
+                                <a class="dropdown-item" href="apoyo/MANUAL-DE-AYUDA.pdf" target="blank">Apoyo</a>
+                                <a href="/cerrar-sesion" class="dropdown-item">Cerrar Sesion</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="fotousuario">
+                    </div>
+                    <div>
+                        <div id="nameusuario" style="color:white">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </nav>
+    </div>
     <div id="proyectos" style="height: auto;">
         <hr>
     </div>
@@ -160,14 +160,14 @@
 
             <hr>
             <div id="mensajes">
-                </div>
+            </div>
             <div class="container justify-content-center">
                 <div class="row justify-content-center justify-content-md-center justify-content-sm-center justify-content-lg-center">
                     <a href="#"><button id="anterior" type="button" class="btn btn-dark">Anterior</button></a>
                     <a href="#"><button id="siguiente" type="button" class="btn btn-dark">Siguiente</button></a> </a>
                 </div>
             </div>
-
+  <!--DESDE AQUI COMIENZAN A VERSE LOS MENSAJES-->
             <hr>
             <main role="main" class="container">
                 <div class="container-fluid">
@@ -188,168 +188,114 @@
             <div>
                 <hr>
             </div>
+          
             <main role="main" class="container">
-                <div class="container-fluid">
+                <div  class="container-fluid">
                     <div class="row">
-                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
-                            <div class="section">
-                                <section>
-                                    <img class="imagen" src="img/html.png">
-                                    <h5>Attack: On Titan Capitulo 10, subtitulos español</h5>
-                                    <h6>Fuera Joh</h6>
-                                    <h6>25k Views | 24 hours Ago</h6>
-                                </section>
-                            </div>
+                        <div id="mensajitos">
+                        <div  class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
+                                <div class="section">  
+                                </div> 
                         </div>
-
-                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
-                            <section>
-                                <img class="imagen" src="img/css.png">
-                                <h5>Attack: On Titan Capitulo 10, subtitulos español</h5>
-                                <h6>Fuera Joh</h6>
-                                <h6>25k Views | 24 hours Ago</h6>
-                            </section>
                         </div>
-
-                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
-                            <section>
-                                <img class="imagen" src="img/javascrit.jpg">
-                                <h5>Attack: On Titan Capitulo 10, subtitulos español</h5>
-                                <h6>Fuera Joh</h6>
-                                <h6>25k Views | 24 hours Ago</h6>
-                            </section>
-                        </div>
-
-                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
-                            <section>
-                                <img class="imagen" src="img/html5.png">
-                                <h5>Attack: On Titan Capitulo 10, subtitulos español</h5>
-                                <h6>Fuera Joh</h6>
-                                <h6>25k Views | 24 hours Ago</h6>
-                            </section>
-                        </div>
-
-                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
-                            <section>
-                                <img class="imagen" src="img/css3.png">
-                                <h5>Attack: On Titan Capitulo 10, subtitulos español</h5>
-                                <h6>Fuera Joh</h6>
-                                <h6>25k Views | 24 hours Ago</h6>
-                            </section>
-                        </div>
-
-                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
-                            <section>
-                                <img class="imagen" src="img/javascript-Djs.png">
-                                <h5>Attack: On Titan Capitulo 10, subtitulos español</h5>
-                                <h6>Fuera Joh</h6>
-                                <h6>25k Views | 24 hours Ago</h6>
-                            </section>
-                        </div>
-
                     </div>
                 </div>
             </main>
-            <div id="colecciones"><div>
-            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                <br>
-                <button id="anterior" type="button" class="btn btn-dark">Anterior</button>
-                <button id="siguiente" type="button" class="btn btn-dark">Siguiente</button>
-                <br>
-                <br>
-            </div>
 
-            <main id="colecciones" role="main" class="container">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12" styles=" text-align:center; position:center">
-                            <h1 class="plumasescogidas" styles="text-align:center; position:center">Colecciones
-                        </div>
-                        <div id="verplumas"> <a href="#">
-                                <h4> Ver mas colecciones-> </h4>
-                            </a>
-                        </div>
-                        </h1>
+            <div id="colecciones">
+                <div>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                         <br>
+                        <button id="anterior" type="button" class="btn btn-dark">Anterior</button>
+                        <button id="siguiente" type="button" class="btn btn-dark">Siguiente</button>
+                        <br>
+                        <br>
+                    </div>
+
+                    <main id="colecciones" role="main" class="container">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12" styles=" text-align:center; position:center">
+                                    <h1 class="plumasescogidas" styles="text-align:center; position:center">Colecciones
+                                </div>
+                                <div id="verplumas"> <a href="#">
+                                        <h4> Ver mas colecciones-> </h4>
+                                    </a>
+                                </div>
+                                </h1>
+                                <br>
+                                <hr>
+                            </div>
+                        </div>
+                    </main>
+                    <div>
                         <hr>
                     </div>
-                </div>
-            </main>
-            <div>
-                <hr>
-            </div>
-            <main role="main" class="container">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
-                            <div class="section">
-                                <section>
-                                    <img class="imagen" src="img/html.png">
-                                    <h5>Attack: On Titan Capitulo 10, subtitulos español</h5>
-                                    <h6>Fuera Joh</h6>
-                                    <h6>25k Views | 24 hours Ago</h6>
-                                </section>
+                    <main role="main" class="container">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
+                                    <div class="section">
+                                        <section>
+                                            <img class="imagen" src="img/html.png">
+                                            <h5>Attack: On Titan Capitulo 10, subtitulos español</h5>
+                                            <h6>Fuera Joh</h6>
+                                            <h6>25k Views | 24 hours Ago</h6>
+                                        </section>
+                                    </div>
+                                </div>
+
+                                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
+                                    <section>
+                                        <img class="imagen" src="img/css.png">
+                                        <h5>Attack: On Titan Capitulo 10, subtitulos español</h5>
+                                        <h6>Fuera Joh</h6>
+                                        <h6>25k Views | 24 hours Ago</h6>
+                                    </section>
+                                </div>
+
+                                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
+                                    <section>
+                                        <img class="imagen" src="img/javascrit.jpg">
+                                        <h5>Attack: On Titan Capitulo 10, subtitulos español</h5>
+                                        <h6>Fuera Joh</h6>
+                                        <h6>25k Views | 24 hours Ago</h6>
+                                    </section>
+                                </div>
+
+                                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
+                                    <section>
+                                        <img class="imagen" src="img/html5.png">
+                                        <h5>Attack: On Titan Capitulo 10, subtitulos español</h5>
+                                        <h6>Fuera Joh</h6>
+                                        <h6>25k Views | 24 hours Ago</h6>
+                                    </section>
+                                </div>
+
+                              
+
+                                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
+                                    <section>
+                                        <img class="imagen" src="img/javascript-Djs.png">
+                                        <h5>Attack: On Titan Capitulo 10, subtitulos español</h5>
+                                        <h6>Fuera Joh</h6>
+                                        <h6>25k Views | 24 hours Ago</h6>
+                                    </section>
+                                </div>
+
                             </div>
                         </div>
+                    </main>
 
-                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
-                            <section>
-                                <img class="imagen" src="img/css.png">
-                                <h5>Attack: On Titan Capitulo 10, subtitulos español</h5>
-                                <h6>Fuera Joh</h6>
-                                <h6>25k Views | 24 hours Ago</h6>
-                            </section>
-                        </div>
-
-                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
-                            <section>
-                                <img class="imagen" src="img/javascrit.jpg">
-                                <h5>Attack: On Titan Capitulo 10, subtitulos español</h5>
-                                <h6>Fuera Joh</h6>
-                                <h6>25k Views | 24 hours Ago</h6>
-                            </section>
-                        </div>
-
-                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
-                            <section>
-                                <img class="imagen" src="img/html5.png">
-                                <h5>Attack: On Titan Capitulo 10, subtitulos español</h5>
-                                <h6>Fuera Joh</h6>
-                                <h6>25k Views | 24 hours Ago</h6>
-                            </section>
-                        </div>
-
-                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
-                            <section>
-                                <img class="imagen" src="img/css3.png">
-                                <h5>Attack: On Titan Capitulo 10, subtitulos español</h5>
-                                <h6>Fuera Joh</h6>
-                                <h6>25k Views | 24 hours Ago</h6>
-                            </section>
-                        </div>
-
-                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
-                            <section>
-                                <img class="imagen" src="img/javascript-Djs.png">
-                                <h5>Attack: On Titan Capitulo 10, subtitulos español</h5>
-                                <h6>Fuera Joh</h6>
-                                <h6>25k Views | 24 hours Ago</h6>
-                            </section>
-                        </div>
-
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                        <br>
+                        <button id="anterior" type="button" class="btn btn-dark">Anterior</button>
+                        <button id="siguiente" type="button" class="btn btn-dark">Siguiente</button>
+                        <br>
+                        <br>
                     </div>
+
                 </div>
-            </main>
-
-            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                <br>
-                <button id="anterior" type="button" class="btn btn-dark">Anterior</button>
-                <button id="siguiente" type="button" class="btn btn-dark">Siguiente</button>
-                <br>
-                <br>
-            </div>
-
-        </div>
     </main>
 
     <div>
@@ -357,9 +303,8 @@
             <div class="footer-container">
                 <div class="footer-main">
                     <div class="footer-columna">
-                        <h3>Registrate</h3>
-                        <input type="email" placeholder="Escriba su Correo o Teléfono">
-                        <input type="submit" value="Suscribirse">
+                        <h3>Dunamis Digitales</h3>
+                        <img src="img/DigitalesDunamis.jpg" class="logo-dunamisfooter">
                     </div>
                     <div class="footer-columna">
                         <h3>Dirección</h3>
@@ -390,9 +335,30 @@
                         </p>
                     </div>
                     <div class="footer-redes">
-                        <a href="#" img src="img/logoFacebook.png" alt="Facebook" class="fa fa-facebook"></a>
-                        <a href="#" img src="img/logoTwiter.png" alt="Twiter" class="fa fa-twitter"></a>
-                        <a href="#" img src="img/logogithub.png" alt="Github" class="fa fa-github"></a>
+                        <div class="container">
+                            <ul class="list-inline list-social">
+                                <li class="list-inline-item social-twitter">
+                                    <a href="http://www.twitter.com">
+                                        <i class="fab fa-twitter"></i>
+                                    </a>
+                                </li>
+                                <li class="list-inline-item social-facebook">
+                                    <a href="http://www.facebook.com">
+                                        <i class="fab fa-facebook-f"></i>
+                                    </a>
+                                </li>
+                                <li class="list-inline-item social-google-plus">
+                                    <a href="http://www.googleplus.com">
+                                        <i class="fab fa-google-plus-g"></i>
+                                    </a>
+                                </li>
+                                <li class="list-inline-item social-linkedin">
+                                    <a href="http://www.linkedin.com">
+                                        <i class="fab fa-linkedin"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -403,6 +369,7 @@
     </div>
     <script src="js/jquery.min.js"></script>
     <script src="js/controlador.js"></script>
+    <script src="js/controlmensajes.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
 </body>
 
