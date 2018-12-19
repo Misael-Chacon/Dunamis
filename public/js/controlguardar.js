@@ -15,7 +15,7 @@ $(document).ready(function(){
 });
 
 $("#guardaproyecto").click(function(){
-	var parametros = `editor=${$("#editor").val()}&editorr=${$("#editorr").val()}&editora=${$("#editora").val()}`;
+	var parametros = `html=${$("#html").val()}&css=${$("#css").val()}&javascript=${$("#javascript").val()}`;
      $.ajax({
         url:"/guardahtmlcssjavascript",
 		method:"GET",
@@ -23,6 +23,7 @@ $("#guardaproyecto").click(function(){
         dataType:"json",
         success:function(res){
 			console.log(res);
+			alert("Proyecto Guardado Exitosamente");
 			//window.location.href = "/perfil.html";
         },
         error:function(error){
