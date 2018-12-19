@@ -40,7 +40,7 @@
                                     <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
                                         <a href="perfil.html" class="dropdown-item">Perfil</a>
                                         <a class="dropdown-item" href="apoyo/MANUAL-DE-AYUDA.pdf" target="blank">Apoyo</a>
-                                        <a href="index.html" class="dropdown-item">Cerrar Sesion</a>
+                                        <a href="/cerrar-sesion" class="dropdown-item">Cerrar Sesion</a>
                                     </div>
                                 </div>
                             </div>
@@ -63,10 +63,10 @@
             <h2 style="text-align: center">Crear Nuevo Mensaje<br></h2>
         </div>
             <div class="col-md-12 order-md-1 text-center">
-                <form action="/mensaje" method="GET" class="needs-validation" novalidate>
+                <form action="/mensaje" method="POST" class="needs-validation" novalidate>
                     <div class="mb-3">
-                        <label for="nombredproyecto">Titulo del Mensaje</label>
-                        <input type="text" class="form-control" name="nombredproyecto" placeholder="Ejem. Me Gusta Dunamis Digitales "
+                        <label for="nombredmensaje">Titulo del Mensaje</label>
+                        <input type="text" class="form-control" name="nombredmensaje" placeholder="Ejem. Me Gusta Dunamis Digitales "
                             required>
                         <div class="invalid-feedback">
                             Se requiere que escriba el Titulo del Mensaje
@@ -75,9 +75,9 @@
                     <div class="control-group form-group">
                             <div class="controls">
                                 <label for="descripcion" >Escriba su mensaje</label>
-                                <span id="alertBiography" data-toggle="popover" data-trigger="hover" data-placement="auto"
+                                <span id="alertmensaje" data-toggle="popover" data-trigger="hover" data-placement="auto"
                                     title="" data-content="">
-                                    <textarea rows="10" cols="30" class="form-control" name="descripcion" id="descripcionproyecto" required
+                                    <textarea rows="10" cols="30" class="form-control" name="mensaje" required
                                         maxlength="999" style="resize:none" data-validation-required-message="Por favor escriba un poco de lo que trata el proyecto."></textarea>
                                         <div class="invalid-feedback">
                                                 Por favor escriba un poco de lo que trata su mensaje.
