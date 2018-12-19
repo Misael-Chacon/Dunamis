@@ -252,13 +252,7 @@ input[type="text"], input[type="password"], select{
 .boton-rojo{
     background-color: red;
 }
-h5{
-    font-weight: bold;
-    font-size: 12px;
-}
-h6{
-    font-size: 12px;
-}
+
 .plumasescogidas{
     margin: auto; 
     margin-top: 20px;
